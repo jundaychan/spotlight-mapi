@@ -18,6 +18,16 @@ type AccessToken struct {
 	RefreshTokenExpiresIn int64 `json:"refresh_token_expires_in,omitempty"`
 	// UserID 授权账号的user_id
 	UserID string `json:"user_id,omitempty"`
+	// VirtualSellerID 授权账号的虚拟商家ID
+	VirtualSellerID string `json:"virtual_seller_id,omitempty"`
+	// CorporationName 授权方公司名称
+	CorporationName string `json:"corporation_name,omitempty"`
+	// AppID 应用ID
+	AppID uint64 `json:"app_id,omitempty"`
+	// CreateTime 授权创建时间(ms)
+	CreateTime int64 `json:"create_time,omitempty"`
+	// UpdateTime 授权更新时间(ms)
+	UpdateTime int64 `json:"update_time,omitempty"`
 	// ApprovalRoleType 授权账号类型，4：品牌，601：代理商
 	ApprovalRoleType enum.ApprovalRoleType `json:"approval_role_type,omitempty"`
 	// RoleType 应用角色类型，1：品牌开发者，2：代理商开发者，3：服务商开发者
