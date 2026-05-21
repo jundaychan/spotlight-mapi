@@ -1,9 +1,9 @@
 package keyword
 
 import (
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // CommonRecommendRequest 定向推词-以词推词 API Request

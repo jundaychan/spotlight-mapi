@@ -1,8 +1,8 @@
 package directlink
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // CreateRequest 创建直达链接 API Request

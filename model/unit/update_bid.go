@@ -1,7 +1,7 @@
 package unit
 
 import (
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // UpdateBidRequest 修改单元出价 API Request

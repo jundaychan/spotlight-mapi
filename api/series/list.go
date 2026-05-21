@@ -3,8 +3,8 @@ package series
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/series"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/series"
 )
 
 // List 可投剧集列表

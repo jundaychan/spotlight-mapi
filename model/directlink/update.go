@@ -1,6 +1,6 @@
 package directlink
 
-import "github.com/bububa/spotlight-mapi/util"
+import "github.com/jundaychan/spotlight-mapi/util"
 
 // UpdateRequest 编辑直达链接 API Request
 type UpdateRequest struct {

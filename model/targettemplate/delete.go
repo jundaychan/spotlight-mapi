@@ -1,6 +1,6 @@
 package targettemplate
 
-import "github.com/bububa/spotlight-mapi/util"
+import "github.com/jundaychan/spotlight-mapi/util"
 
 // DeleteRequest 删除定向包 API Request
 type DeleteRequest struct {

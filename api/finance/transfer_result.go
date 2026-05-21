@@ -3,8 +3,8 @@ package finance
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/finance"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/finance"
 )
 
 // TransferResult 查询转账结果接口

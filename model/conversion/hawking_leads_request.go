@@ -1,6 +1,6 @@
 package conversion
 
-import "github.com/bububa/spotlight-mapi/util"
+import "github.com/jundaychan/spotlight-mapi/util"
 
 // HawkingLeadsRequest 聚光落地页线索数据回传 API Request
 type HawkingLeadsRequest struct {

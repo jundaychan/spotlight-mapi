@@ -3,8 +3,8 @@ package crowdreport
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/crowdreport"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/crowdreport"
 )
 
 // crowdReportURL 人群包报表完整请求地址

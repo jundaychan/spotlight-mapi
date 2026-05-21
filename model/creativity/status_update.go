@@ -1,8 +1,8 @@
 package creativity
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // StatusUpdateRequest 修改创意状态 API Request

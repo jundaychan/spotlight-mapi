@@ -1,8 +1,8 @@
 package series
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // ListRequest 可投剧集列表 API Request

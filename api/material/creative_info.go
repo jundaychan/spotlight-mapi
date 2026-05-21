@@ -3,8 +3,8 @@ package material
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/material"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/material"
 )
 
 // CreativeInfo 创意标题和图片信息

@@ -3,8 +3,8 @@ package conversion
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/conversion"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/conversion"
 )
 
 // AuroraLeads 线索转化数据回传

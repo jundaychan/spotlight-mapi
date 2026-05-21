@@ -1,8 +1,8 @@
 package newcreate
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // UpdateRequest 新创编编辑 API Request（目前只支持产品种草营销诉求）

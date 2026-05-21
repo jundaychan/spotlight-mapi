@@ -3,8 +3,8 @@ package newcreate
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/newcreate"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/newcreate"
 )
 
 // Create 新创编（级联创建计划/单元/创意）

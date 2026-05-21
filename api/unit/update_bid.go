@@ -3,8 +3,8 @@ package unit
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/unit"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/unit"
 )
 
 // UpdateBid 修改单元出价

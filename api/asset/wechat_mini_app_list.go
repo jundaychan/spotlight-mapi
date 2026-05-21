@@ -3,8 +3,8 @@ package asset
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/asset"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/asset"
 )
 
 // WechatMiniAppList 获取微信小程序/小游戏列表

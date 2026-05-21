@@ -1,7 +1,7 @@
 package finance
 
 import (
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // SmartSwitch 是否开启节假日上浮

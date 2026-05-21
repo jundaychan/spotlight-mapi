@@ -14,11 +14,11 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
-const instrumentationName = "github.com/bububa/spotlight-mapi"
+const instrumentationName = "github.com/jundaychan/spotlight-mapi"
 
 type Otel struct {
 	traceProvider trace.TracerProvider

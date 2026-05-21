@@ -1,6 +1,6 @@
 package newcreate
 
-import "github.com/bububa/spotlight-mapi/model"
+import "github.com/jundaychan/spotlight-mapi/model"
 
 // TimePeriodDTO 投放时段配置
 // 每天24个字符，每个小时用0和1表示，0表示不投，1表示投放

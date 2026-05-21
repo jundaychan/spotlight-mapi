@@ -1,6 +1,6 @@
 package report
 
-import "github.com/bububa/spotlight-mapi/model"
+import "github.com/jundaychan/spotlight-mapi/model"
 
 // DataReportDTO 数据指标
 type DataReportDTO struct {

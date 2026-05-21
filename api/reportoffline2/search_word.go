@@ -3,8 +3,8 @@ package reportoffline2
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/reportoffline2"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/reportoffline2"
 )
 
 // SearchWord 搜索词层级离线报表数据

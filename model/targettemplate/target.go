@@ -1,7 +1,7 @@
 package targettemplate
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model"
 )
 
 // MarketingTarget 营销诉求

@@ -1,7 +1,7 @@
 package unit
 
 import (
-	"github.com/bububa/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/enum"
 )
 
 // Unit 广告单元

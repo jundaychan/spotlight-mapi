@@ -1,8 +1,8 @@
 package newcreate
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // CreateRequest 新创编 API Request（级联创建计划/单元/创意）

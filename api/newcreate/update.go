@@ -3,8 +3,8 @@ package newcreate
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/newcreate"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/newcreate"
 )
 
 // Update 新创编编辑（目前只支持产品种草营销诉求）

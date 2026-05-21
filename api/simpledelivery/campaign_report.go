@@ -3,8 +3,8 @@ package simpledelivery
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/simpledelivery"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/simpledelivery"
 )
 
 // CampaignReport 简单投计划报表（离线）

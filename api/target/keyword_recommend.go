@@ -3,8 +3,8 @@ package target
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/target"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/target"
 )
 
 // KeywordRecommend 获取推荐关键词信息

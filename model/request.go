@@ -3,7 +3,7 @@ package model
 import (
 	"io"
 
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 type Request interface {

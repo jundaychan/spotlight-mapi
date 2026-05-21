@@ -3,8 +3,8 @@ package campaigngroup
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/campaigngroup"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/campaigngroup"
 )
 
 // Update 更新广告组

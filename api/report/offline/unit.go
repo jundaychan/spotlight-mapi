@@ -3,8 +3,8 @@ package offline
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/report/offline"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/report/offline"
 )
 
 // Unit 广告单元层级离线数据

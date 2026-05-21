@@ -1,9 +1,9 @@
 package crowdreport
 
 import (
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // ReportType 人群包报表查询维度

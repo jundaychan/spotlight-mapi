@@ -3,8 +3,8 @@ package realtime
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/report/realtime"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/report/realtime"
 )
 
 // Campaign 计划层级实时数据

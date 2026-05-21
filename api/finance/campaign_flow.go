@@ -3,8 +3,8 @@ package finance
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/finance"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/finance"
 )
 
 // CampaignFlow 获取计划流水接口

@@ -3,8 +3,8 @@ package simpledelivery
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/simpledelivery"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/simpledelivery"
 )
 
 // TargetRealtime 简单投标的层级实时数据

@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bububa/spotlight-mapi/core/internal/debug"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/core/internal/debug"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 var (

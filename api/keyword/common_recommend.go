@@ -3,8 +3,8 @@ package keyword
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/keyword"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/keyword"
 )
 
 // CommonRecommend 定向推词-以词推词

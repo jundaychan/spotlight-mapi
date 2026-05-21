@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // AppRequest APP口令码数据回传 API Request

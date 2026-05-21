@@ -3,8 +3,8 @@ package directlink
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/directlink"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/directlink"
 )
 
 // Update 编辑直达链接

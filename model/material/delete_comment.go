@@ -1,7 +1,7 @@
 package material
 
 import (
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // DeleteCommentRequest 删除广告素材评论 API Request

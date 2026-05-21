@@ -3,8 +3,8 @@ package advertiser
 import (
 	"strconv"
 
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // Balance 账号余额

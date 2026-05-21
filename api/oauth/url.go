@@ -3,9 +3,9 @@ package oauth
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/oauth"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/oauth"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // URL 生成oauth授权链接

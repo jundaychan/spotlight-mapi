@@ -3,8 +3,8 @@ package directlink
 import (
 	"strconv"
 
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // ListRequest 获取直达链接 API Request

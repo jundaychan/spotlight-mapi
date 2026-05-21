@@ -3,9 +3,9 @@ package realtime
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/report"
-	"github.com/bububa/spotlight-mapi/model/report/realtime"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/report"
+	"github.com/jundaychan/spotlight-mapi/model/report/realtime"
 )
 
 // Advertiser 账户层级实时数据

@@ -3,8 +3,8 @@ package realtime
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/report/realtime"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/report/realtime"
 )
 
 // Keyword 关键词层级实时数据

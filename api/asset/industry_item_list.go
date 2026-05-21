@@ -3,8 +3,8 @@ package asset
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/asset"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/asset"
 )
 
 // IndustryItemList 获取行业商品列表

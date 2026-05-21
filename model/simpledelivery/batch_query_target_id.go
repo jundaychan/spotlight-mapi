@@ -1,8 +1,8 @@
 package simpledelivery
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // BatchQueryTargetIDRequest 批量查询简单投标的ID API Request

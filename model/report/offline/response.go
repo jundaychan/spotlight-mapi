@@ -1,8 +1,8 @@
 package offline
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/model/report"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model/report"
 )
 
 // Response 离线数据 API Response

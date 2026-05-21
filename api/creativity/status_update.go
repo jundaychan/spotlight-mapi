@@ -3,8 +3,8 @@ package creativity
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/creativity"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/creativity"
 )
 
 // StatusUpdate 修改创意状态

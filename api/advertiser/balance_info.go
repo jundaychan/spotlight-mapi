@@ -3,8 +3,8 @@ package advertiser
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/advertiser"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/advertiser"
 )
 
 // BalanceInfo 获取账号余额接口

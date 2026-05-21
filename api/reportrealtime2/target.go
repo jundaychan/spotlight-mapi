@@ -3,8 +3,8 @@ package reportrealtime2
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/reportrealtime2"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/reportrealtime2"
 )
 
 // Target 定向层级实时数据

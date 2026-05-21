@@ -1,9 +1,9 @@
 package target
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/model/unit"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model/unit"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // GetAvailableTargetInfoRequest 获取定向信息 API Request

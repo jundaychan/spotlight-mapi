@@ -3,8 +3,8 @@ package negativekeyword
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/negativekeyword"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/negativekeyword"
 )
 
 // List 查询否定词列表

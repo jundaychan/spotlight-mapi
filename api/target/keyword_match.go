@@ -3,8 +3,8 @@ package target
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/target"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/target"
 )
 
 // KeywordMatch 获取关键词匹配词库信息

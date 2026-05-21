@@ -3,9 +3,9 @@ package oauth
 import (
 	"strconv"
 
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // URlRequest OAuth授权链接请求

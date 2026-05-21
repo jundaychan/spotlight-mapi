@@ -3,8 +3,8 @@ package targettemplate
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/targettemplate"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/targettemplate"
 )
 
 // Apply 定向包关联单元

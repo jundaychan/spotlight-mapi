@@ -1,9 +1,9 @@
 package simpledelivery
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/model/report"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model/report"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // CampaignRealtimeRequest 简单投计划层级实时数据 API Request

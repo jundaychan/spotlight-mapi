@@ -1,6 +1,6 @@
 package directlink
 
-import "github.com/bububa/spotlight-mapi/util"
+import "github.com/jundaychan/spotlight-mapi/util"
 
 // DeleteRequest 删除直达链接 API Request
 type DeleteRequest struct {

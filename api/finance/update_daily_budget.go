@@ -3,8 +3,8 @@ package finance
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/finance"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/finance"
 )
 
 // UpdateDailyBudget 修改账户日预算

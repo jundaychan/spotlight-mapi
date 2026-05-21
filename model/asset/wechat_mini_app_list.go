@@ -1,8 +1,8 @@
 package asset
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // WechatMiniAppListRequest 获取微信小程序/小游戏列表 API Request

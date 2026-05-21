@@ -1,8 +1,8 @@
 package target
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // KeywordMatchRequest 获取关键词匹配词库信息 API Request

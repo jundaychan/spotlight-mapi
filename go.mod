@@ -1,4 +1,4 @@
-module github.com/bububa/spotlight-mapi
+module github.com/jundaychan/spotlight-mapi
 
 go 1.21
 

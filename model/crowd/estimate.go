@@ -1,9 +1,9 @@
 package crowd
 
 import (
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/model/unit"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model/unit"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // EstimateRequest 人群预估 API Request

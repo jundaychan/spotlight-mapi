@@ -1,8 +1,8 @@
 package conversion
 
 import (
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // Request 转化回传请求

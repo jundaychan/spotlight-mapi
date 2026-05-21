@@ -3,8 +3,8 @@ package landingpage
 import (
 	"context"
 
-	"github.com/bububa/spotlight-mapi/core"
-	"github.com/bububa/spotlight-mapi/model/landingpage"
+	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/landingpage"
 )
 
 // List 落地页表单查询

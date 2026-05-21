@@ -1,10 +1,10 @@
 package simpledelivery
 
 import (
-	"github.com/bububa/spotlight-mapi/enum"
-	"github.com/bububa/spotlight-mapi/model"
-	"github.com/bububa/spotlight-mapi/model/report"
-	"github.com/bububa/spotlight-mapi/util"
+	"github.com/jundaychan/spotlight-mapi/enum"
+	"github.com/jundaychan/spotlight-mapi/model"
+	"github.com/jundaychan/spotlight-mapi/model/report"
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // TargetReportRequest 简单投标的报表 API Request（离线）
