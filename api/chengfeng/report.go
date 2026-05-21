@@ -60,6 +60,16 @@ func OfflineLive(ctx context.Context, clt *core.SDKClient, req *offline.Request,
 	return postOffline(ctx, clt, "/wind/data/report/offline/live", req, accessToken)
 }
 
+// OfflineRaw 通用离线报表(原样保留全部返回字段)。level 为 account/campaign/creativity/note/keyword/spu/live。
+// 用于笔记列表等需要 note_title/note_image/note_jump_url 等强类型未覆盖字段的场景。
+func OfflineRaw(ctx context.Context, clt *core.SDKClient, level string, req *offline.Request, accessToken string) (*mdlcf.RawReportList, error) {
+	var resp mdlcf.RawReportResponse
+	if err := clt.Post(ctx, "/wind/data/report/offline/"+level, req, &resp, accessToken); err != nil {
+		return nil, err
+	}
+	return resp.Data, nil
+}
+
 // ===== 实时报表 /wind/data/report/realtime/{level} =====
 
 // RealtimeAccount 账户层级实时数据(返回单条汇总)。
