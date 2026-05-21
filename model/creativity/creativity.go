@@ -55,7 +55,7 @@ type Creativity struct {
 	// Image 创意图片
 	Image string `json:"image,omitempty"`
 	// ItemInvalidReason 商品状态异常原因
-	ItemInvalidReason string `json:"item_invalid_reason,omitempty"`
+	ItemInvalidReason int `json:"item_invalid_reason,omitempty"`
 	// ConversionComponentTypes 组件类型
 	ConversionComponentTypes []int `json:"conversion_component_types,omitempty"`
 	// Comment 备注
