@@ -104,6 +104,19 @@ type Request struct {
 	// 16-应用推广_应用唤起
 	// 17-外溢种草
 	MarketingTarget []int `json:"marketing_target,omitempty"`
+	// Filters 通用筛选条件(乘风用)。如按投放方式 deliveryMode(自定义:0/托管:1)筛选：
+	// {Column:"deliveryMode", Operator:"in", Values:[]int{1}}
+	Filters []FilterClause `json:"filters,omitempty"`
+}
+
+// FilterClause 通用筛选子句，对应乘风报表 filters:[{column,operator,values}]。
+type FilterClause struct {
+	// Column 筛选列，如 deliveryMode / campaignPlacement / marketingTarget
+	Column string `json:"column"`
+	// Operator 操作符，目前支持 in
+	Operator string `json:"operator,omitempty"`
+	// Values 取值
+	Values []int `json:"values,omitempty"`
 }
 
 // Encode implement PostRequest interface
