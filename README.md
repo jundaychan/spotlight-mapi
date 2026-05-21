@@ -76,3 +76,31 @@
     - 聚光落地页线索数据回传 [ HawkingLeads(ctx context.Context, clt *core.SDKClient, req *conversion.HawkingLeadsRequest) error ]
   - 口令码
     - APP口令码数据回传 [ App(ctx context.Context, clt *core.SDKClient, req *conversion.AppRequest) error ]
+
+---
+
+## Fork 补充接口（对齐聚光开放文档 bizType=943，2026-05）
+
+> 以下接口为本 fork 在 bububa 原版基础上补齐，覆盖官方文档新增/遗漏部分。每个接口签名同原版：`func(ctx, clt *core.SDKClient, req *<pkg>.XxxRequest, accessToken string)`。
+
+- 投放管理
+  - 广告组：campaigngroup.Create / Update / Delete / List（/jg/campaign/group/*）
+  - 新创编：newcreate.Create（/jg/cascade/create）/ Update（/jg/cascade/modify）
+  - 简单投：simpledelivery.Create（/jg/ube/semi/auto/create）/ BatchQueryTargetID
+  - 单元增强：unit.UpdateBid（/jg/unit/batch/update/bid）/ unit.AddKeyword（/jg/unit/keyword/add）
+  - 否定词：negativekeyword.BatchAdd / BatchDelete / List（/jg/negative/keyword/*）
+- 定向包：targettemplate.Create / Update / Delete / List / Apply（/jg/target/template/*）
+- 笔记：note.List / QueryID（/jg/noteid/query）/ Delete
+- 素材管理
+  - 直达链接编辑：directlink.Update（/jg/direct-link/update）
+  - 落地资产：asset.MobileAppList / WechatMiniAppList / RedbookMiniAppList / IndustryItemList
+  - 素材发布与评论：material.Publish / CreativeInfo / GetComments / DeleteComment
+  - 剧集：series.Create / Update / List（/jg/data/episodes/*）
+- 数据报表
+  - 离线补充：reportoffline2.SPU / Note / SearchWord
+  - 实时补充：reportrealtime2.Target（定向层级）
+  - 人群包报表：crowdreport.CrowdReport / CrowdReportV2
+  - AI 智能笔记详情：ainote.Detail
+  - 简单投报表：simpledelivery.{Target,Note,Campaign}Report / {Target,Note,Campaign,Keyword}Realtime
+- 账户服务（财务）：finance.Transfer / TransferResult / FundFlow / CampaignFlow / AccountFlow / DailyBudgetBalance / UpdateDailyBudget / AgentSubAccountList / AgentBalance
+- 工具：history.List（历史操作记录，/jg/history/list）
