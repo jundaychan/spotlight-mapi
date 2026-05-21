@@ -28,6 +28,8 @@ type RealtimeRequest struct {
 	PageNum int64 `json:"page_num,omitempty"`
 	// PageSize 页大小，默认20,最大1000
 	PageSize int64 `json:"page_size,omitempty"`
+	// DeliveryModeList 投放模式过滤(仅计划层级实时支持)：自定义:0 / 托管(简单投):1
+	DeliveryModeList []int `json:"delivery_mode_list,omitempty"`
 }
 
 // Encode implement PostRequest interface
