@@ -70,8 +70,14 @@ type GroupDTO struct {
 
 // GroupParadigm 广告组实体对象
 type GroupParadigm struct {
-	// CampaignGroupID 广告组ID（标的ID）
+	// AdvertiserID 广告主ID
+	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
+	// CampaignGroupID 广告组ID（标的ID）。ube/campaign、ube/note、ube/keyword 三个实时口必传且只能传一个，就是这里拿
 	CampaignGroupID uint64 `json:"campaign_group_id,omitempty"`
+	// GroupType 标的类型，1-全自动托管、4-半自动托管
+	GroupType int `json:"group_type,omitempty"`
+	// MarketingTarget 营销诉求，4-产品种草、9-客资收集、13-种草直达、16-应用唤起、20-应用下载、21-小程序推广
+	MarketingTarget int `json:"marketing_target,omitempty"`
 	// CampaignGroupName 标的名称
 	CampaignGroupName string `json:"campaign_group_name,omitempty"`
 	// Enable 上线状态，0-下线、1-上线
