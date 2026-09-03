@@ -32,7 +32,7 @@ type CreativityRequest struct {
 	// CreativityCreateEndTime 创意创建结束时间
 	CreativityCreateEndTime string `json:"creativity_create_end_time,omitempty"`
 	// ConversionType 创意类型：30：商品，20：落地页，4：直播间笔记，7：直播间，0：笔记（无组件），1：笔记（商品组件），2：笔记（落地页组件）
-	ConversionType int `json:"conversion_type,omitempty"`
+	ConversionType *int `json:"conversion_type,omitempty"`
 	// ProgrammmaticList 创意组合方式，0：自定义创意，1：程序化创意
 	ProgrammaticList []int `json:"programmatic_list,omitempty"`
 	// CreativityAuditStatus 创意审核状态，1：审核拒绝，2：审核中，3：审核通过，4：审核通过（私密）

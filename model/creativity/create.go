@@ -24,7 +24,7 @@ type CreateRequest struct {
 	// TitleMaskPerfer 是否开启标题优选，默认0，开启传1
 	TitleMaskPerfer int `json:"title_mask_perfer,omitempty"`
 	// ConversionType 组件类型，0: 无组件，2: 落地页组件，3: 私信组件，5: poi门店组件，8: 搜索组件，9: 小程序组件，10: 留资组件，11：唤端组件
-	ConversionType int `json:"conversion_type,omitempty"`
+	ConversionType *int `json:"conversion_type,omitempty"`
 	// JumpURL 落地页/外链url
 	JumpURL string `json:"jump_url,omitempty"`
 	// LandingPageType 落地页链接类型，1：站内落地页，2：外链

@@ -24,7 +24,7 @@ type ListRequest struct {
 	// SpuID spu_id（白名单支持）
 	SpuID string `json:"spu_id,omitempty"`
 	// FilterTaobao 是否只展示小红星笔记 0:展示所有 1:仅小红星
-	FilterTaobao int `json:"filter_taobao,omitempty"`
+	FilterTaobao *int `json:"filter_taobao,omitempty"`
 	// MarketTarget 营销诉求 4：产品种草 9：客资收集 16：应用换端
 	MarketTarget int `json:"market_target,omitempty"`
 	// SpuType 1：spu 2：非标品 3：品牌推广（白名单支持）

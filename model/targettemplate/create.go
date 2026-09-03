@@ -22,7 +22,7 @@ type CreateRequest struct {
 	// Placement 广告类型 1-信息流2-搜索推广4-全站智投7-视频内流
 	Placement Placement `json:"placement,omitempty"`
 	// DeliveryMode 投放模式 0：手动投放，1：自动投放
-	DeliveryMode DeliveryMode `json:"delivery_mode,omitempty"`
+	DeliveryMode *DeliveryMode `json:"delivery_mode,omitempty"`
 }
 
 // Encode implement PostRequest interface

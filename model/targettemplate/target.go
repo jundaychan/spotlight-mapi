@@ -51,7 +51,7 @@ type TargetConfig struct {
 	// Keywords 关键词行为
 	Keywords []string `json:"keywords,omitempty"`
 	// IntelligentExpansion 智能扩量，0: 否，1: 是
-	IntelligentExpansion int `json:"intelligent_expansion,omitempty"`
+	IntelligentExpansion *int `json:"intelligent_expansion,omitempty"`
 	// SearchTargetCityIntent 搜索地域意图定向功能 0-关闭，1-开启
 	SearchTargetCityIntent string `json:"search_target_city_intent,omitempty"`
 	// ReverseTargetCrowd 排除特定人群

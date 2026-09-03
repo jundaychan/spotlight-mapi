@@ -32,7 +32,7 @@ type TargetConfig struct {
 	// KeywordTargetAction 关键词行为类型，1: 搜索，2: 互动，3: 阅读	关键词行为定向选择时必填
 	KeywordTargetAction []enum.KeywordTargetAction `json:"keyword_target_action,omitempty"`
 	// IntelligentExpension 智能扩量0：关闭1：开启
-	IntelligentExpension int `json:"intelligent_expension,omitempty"`
+	IntelligentExpension *int `json:"intelligent_expension,omitempty"`
 	// HaveReverseBloggerFanTarget 是否选择反选博主粉丝人群
 	HaveReverseBloggerFanTarget bool `json:"have_reverse_blogger_fan_target,omitempty"`
 	// HaveReverseBloggerPurchasedTarget 是否选择反选博主购买人群

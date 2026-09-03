@@ -36,7 +36,7 @@ type RedbookMiniAppListRequest struct {
 	// PlayletType 小程序类型：1-RED_MINI_PROGRAM（小红书小程序）2-WECHAT_MINI_PROGRAM（微信小程序）
 	PlayletType PlayletType `json:"playlet_type,omitempty"`
 	// SceneType 场景类型（2-授权小程序，0-我的小程序）默认 0
-	SceneType RedbookMiniAppSceneType `json:"scene_type,omitempty"`
+	SceneType *RedbookMiniAppSceneType `json:"scene_type,omitempty"`
 }
 
 // Encode implement PostRequest interface

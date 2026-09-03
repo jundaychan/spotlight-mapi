@@ -26,7 +26,7 @@ type TransferWallet struct {
 	// VirtualSellerID 代理商/子账号vsellerId
 	VirtualSellerID string `json:"virtual_seller_id,omitempty"`
 	// WalletType 资金类型，CASH = 0 // 现金；CREDIT = 1 // 授信；COMPENSATION_RETURN = 4 // 赔付返货；
-	WalletType WalletType `json:"wallet_type,omitempty"`
+	WalletType *WalletType `json:"wallet_type,omitempty"`
 }
 
 // TransferRequest 转账 API Request

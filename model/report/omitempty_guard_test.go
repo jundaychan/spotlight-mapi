@@ -24,9 +24,15 @@ var omitemptyReviewedOK = map[string]bool{
 	"creativity.StatusUpdateRequest.action_type":            true, // 1/2/3，无 0
 	"finance.UpdateDailyBudgetRequest.account_budget":       true, // 金额，0 非法
 	"unit.TargetConfig.keyword_target_period":               true, // 3/7/15/30，无 0
+	"targettemplate.CrowdPackage.sync_status":               true, // 0=未同步，文档明确只有已同步(1)可用，0 不该发
+	"unit.CrowdPackage.sync_status":                         true, // 同上
+	"target.GetAvailableTargetInfoRequest.marketing_target": true, // 0=旧计划，文档写"第一期只支持4"，0 不该发
+	"newcreate.CreateCampaign.marketing_industry":           true, // 0=未分类，与不传等价
 }
 
-var zeroEnumSignal = regexp.MustCompile(`0[-=－]|false-|默认\s*-1|默认值\s*-1|默认值-1`)
+// 认得出「这条注释里 0 是一个枚举取值」的写法：0-xxx / 0=xxx / 0：xxx / xxx = 0 / xxx：0
+// 有意避开 "10-抢占赛道"、"范围在10-499999" 这类——0 前面是数字就不算。
+var zeroEnumSignal = regexp.MustCompile(`(^|[^0-9])0\s*[-=－:：]|[=：:]\s*0([^0-9]|$)|false-|默认\s*-1|默认值\s*-1|默认值-1`)
 
 // TestNoPlainZeroEnumInRequests 静态守卫：会被序列化发出去的请求结构体里，
 // 「0 是合法枚举值」的字段不许用裸 int/bool + omitempty——零值会被 json 静默丢掉。
@@ -45,6 +51,9 @@ func TestNoPlainZeroEnumInRequests(t *testing.T) {
 	structs := map[string][]field{} // pkg.Type -> 字段
 	refs := map[string][]string{}   // pkg.Type -> 引用到的 pkg.Type
 	encoders := map[string]bool{}   // 有 Encode() 的请求根类型
+	// scalarNamed 收 `type PhraseMatchType int` 这类具名类型——底层是整型/布尔，
+	// 同样会被 omitempty 吃掉零值（enum.PhraseMatchType_EXACT 就是 0）。
+	scalarNamed := map[string]bool{}
 
 	walkGoFiles(t, root, func(path string) {
 		f, err := parser.ParseFile(fset, path, nil, parser.ParseComments)
@@ -68,6 +77,10 @@ func TestNoPlainZeroEnumInRequests(t *testing.T) {
 				if !ok {
 					continue
 				}
+				if id, ok := ts.Type.(*ast.Ident); ok && isScalarName(id.Name) {
+					scalarNamed[pkg+"."+ts.Name.Name] = true
+					continue
+				}
 				st, ok := ts.Type.(*ast.StructType)
 				if !ok || st.Fields == nil {
 					continue
@@ -86,16 +99,21 @@ func TestNoPlainZeroEnumInRequests(t *testing.T) {
 					if name == "" || name == "-" || !strings.Contains(tag, "omitempty") {
 						continue
 					}
-					base, _ := typeString(fl.Type, pkg)
-					if isPtr || !isPlainScalar(fl.Type) {
+					if isPtr {
 						continue
 					}
-					_ = base
+					if _, isSlice := fl.Type.(*ast.ArrayType); isSlice {
+						continue // 切片：omitempty 只丢空切片，元素里的 0 照常发出
+					}
+					named, _ := typeString(fl.Type, pkg)
+					if !isPlainScalar(fl.Type) && named == "" {
+						continue
+					}
 					doc := ""
 					if fl.Doc != nil {
 						doc = fl.Doc.Text()
 					}
-					structs[key] = append(structs[key], field{tag: name, doc: doc, typ: "scalar"})
+					structs[key] = append(structs[key], field{tag: name, doc: doc, typ: named})
 				}
 			}
 		}
@@ -127,6 +145,9 @@ func TestNoPlainZeroEnumInRequests(t *testing.T) {
 			continue // 响应结构体：omitempty 只影响序列化，解码不受影响
 		}
 		for _, f := range fs {
+			if f.typ != "" && !scalarNamed[f.typ] {
+				continue // 具名但底层不是整型/布尔（结构体/切片等），不适用
+			}
 			if !zeroEnumSignal.MatchString(f.doc) {
 				continue
 			}
@@ -147,10 +168,11 @@ func TestNoPlainZeroEnumInRequests(t *testing.T) {
 
 func isPlainScalar(e ast.Expr) bool {
 	id, ok := e.(*ast.Ident)
-	if !ok {
-		return false
-	}
-	switch id.Name {
+	return ok && isScalarName(id.Name)
+}
+
+func isScalarName(n string) bool {
+	switch n {
 	case "int", "int64", "int32", "uint64", "bool":
 		return true
 	}

@@ -117,7 +117,7 @@ type KeywordWithBid struct {
 	// 0:精确匹配
 	// 1:短语匹配
 	// 2:智能匹配
-	PhraseMatchType enum.PhraseMatchType `json:"phrase_match_type,omitempty"`
+	PhraseMatchType *enum.PhraseMatchType `json:"phrase_match_type,omitempty"`
 	// FeedBid 搜索追投出价
 	FeedBid int64 `json:"feed_bid,omitempty"`
 }

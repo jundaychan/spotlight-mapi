@@ -24,7 +24,7 @@ type ListRequest struct {
 	// OptType 操作内容，-1:全部，详见接口文档枚举说明，默认为-1
 	OptType int `json:"opt_type,omitempty"`
 	// Level 操作层级，-1:全部 0:账户 1:计划 2:单元 3:创意 4:关键词 5:定向 6:工具 7:报表 8:广告组 默认为-1
-	Level int `json:"level,omitempty"`
+	Level *int `json:"level,omitempty"`
 }
 
 // Encode implement PostRequest interface

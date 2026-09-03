@@ -40,7 +40,7 @@ type CreateRequest struct {
 	// KeywordGenType 单元选词方式：
 	// -1:无意义默认值 0:手动选词 1:智能拓词 2:手动+智能
 	// 关键词定向且在白名单中才支持
-	KeywordGenType int `json:"keyword_gen_type,omitempty"`
+	KeywordGenType *int `json:"keyword_gen_type,omitempty"`
 	// PageID 落地页ID，聚光落地页下必填
 	PageID string `json:"page_id,omitempty"`
 	// LandingPageURL 落地页Url，自研落地页下必填

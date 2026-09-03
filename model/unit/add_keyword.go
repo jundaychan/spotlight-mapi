@@ -30,7 +30,7 @@ type AddKeywordItem struct {
 	// Bid 出价
 	Bid int64 `json:"bid,omitempty"`
 	// PhraseMatchType 关键词匹配方式 0-精确匹配、1-短语匹配
-	PhraseMatchType enum.PhraseMatchType `json:"phrase_match_type,omitempty"`
+	PhraseMatchType *enum.PhraseMatchType `json:"phrase_match_type,omitempty"`
 }
 
 // Encode implement PostRequest interface

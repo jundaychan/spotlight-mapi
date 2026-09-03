@@ -17,7 +17,7 @@ type EstimateRequest struct {
 	// Placement 广告类型1：信息流2：搜索推广4：全站智投7：视频内流
 	PlaceMent int `json:"placement,omitempty"`
 	// OptimizeTarget 推广目标：0：点击量1：互动量3：表单提交量4：商品成单量5：私信咨询量6：直播间观看量11：商品访客量12：落地页访问量13：私信开口量14：有效观看量18：站外转化量20：TI人群规模21：行业商品成单23：直播预热量24：直播间成交25：直播间支付ROI
-	OptimizeTarget int `json:"optimize_target,omitempty"`
+	OptimizeTarget *int `json:"optimize_target,omitempty"`
 	// TargetType 定向类型，1-通投,2-智能定向, 3-高级定向
 	TargetType int `json:"target_type,omitempty"`
 }
