@@ -5,7 +5,7 @@ import (
 	"github.com/jundaychan/spotlight-mapi/util"
 )
 
-// UpdateRequest 新创编编辑 API Request（目前只支持产品种草营销诉求）
+// UpdateRequest 新创编编辑 API Request（目前只支持产品种草、客资收集营销诉求；文档 4752）
 type UpdateRequest struct {
 	// AdvertiserID 广告主ID
 	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
@@ -56,6 +56,11 @@ type ModifyCampaign struct {
 	ExploreConfig *ExploreConfig `json:"explore_config,omitempty"`
 	// SearchFlag 搜索快投开关，0-关闭、1-开启
 	SearchFlag int `json:"search_flag,omitempty"`
+	// UpdateFields Field Mask：本次真正要更新的字段名集合（下划线命名）。2026-08-17 起建议必传：
+	// 服务端以它为唯一依据判定更新哪些字段，能表达「改回默认值 / 清空」；不传回退到启发式合并。
+	// ⚠️ 本结构体其余字段带 omitempty，零值不会进报文；靠 mask 声明的字段若值为 0/false/""，
+	// 服务端按缺省处理——这正是 mask 的语义，但调用方要清楚自己发的是"清空"。
+	UpdateFields []string `json:"update_fields,omitempty"`
 }
 
 // ModifyUnitWithCreative 编辑单元及创意信息
@@ -86,6 +91,11 @@ type ModifyUnit struct {
 	TargetInfo *CreateTargetInfo `json:"target_info,omitempty"`
 	// SearchBidRatio 搜索出价系数，默认1.0
 	SearchBidRatio float64 `json:"search_bid_ratio,omitempty"`
+	// UpdateFields Field Mask：本次真正要更新的字段名集合（下划线命名）。2026-08-17 起建议必传：
+	// 服务端以它为唯一依据判定更新哪些字段，能表达「改回默认值 / 清空」；不传回退到启发式合并。
+	// ⚠️ 本结构体其余字段带 omitempty，零值不会进报文；靠 mask 声明的字段若值为 0/false/""，
+	// 服务端按缺省处理——这正是 mask 的语义，但调用方要清楚自己发的是"清空"。
+	UpdateFields []string `json:"update_fields,omitempty"`
 }
 
 // ModifyCreativity 编辑创意信息
@@ -128,6 +138,11 @@ type ModifyCreativity struct {
 	PoiJumpType string `json:"poi_jump_type,omitempty"`
 	// PoiID poi组件-id
 	PoiID string `json:"poi_id,omitempty"`
+	// UpdateFields Field Mask：本次真正要更新的字段名集合（下划线命名）。2026-08-17 起建议必传：
+	// 服务端以它为唯一依据判定更新哪些字段，能表达「改回默认值 / 清空」；不传回退到启发式合并。
+	// ⚠️ 本结构体其余字段带 omitempty，零值不会进报文；靠 mask 声明的字段若值为 0/false/""，
+	// 服务端按缺省处理——这正是 mask 的语义，但调用方要清楚自己发的是"清空"。
+	UpdateFields []string `json:"update_fields,omitempty"`
 }
 
 // UpdateResponse 新创编编辑 API Response（data为null）

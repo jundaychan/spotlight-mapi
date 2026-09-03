@@ -125,6 +125,8 @@ type CreateTargetInfo struct {
 	SearchTargetCityIntent int `json:"search_target_city_intent,omitempty"`
 	// TargetGeneralizationSwitch 定向拓宽开关
 	TargetGeneralizationSwitch int `json:"target_generalization_switch,omitempty"`
+	// UpdateFields Field Mask（仅编辑接口 /jg/cascade/modify 用）：本次要更新的定向字段名集合
+	UpdateFields []string `json:"update_fields,omitempty"`
 }
 
 // PremiumTargetCrowd 人群优投
