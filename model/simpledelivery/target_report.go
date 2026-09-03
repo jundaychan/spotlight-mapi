@@ -30,7 +30,7 @@ type TargetReportRequest struct {
 	// PageSize 页大小，默认20，最大500
 	PageSize int64 `json:"page_size,omitempty"`
 	// DataCaliber 数据指标归因时间类型，0-计费时间、1-转化时间，默认计费时间
-	DataCaliber int `json:"data_caliber,omitempty"`
+	DataCaliber *int `json:"data_caliber,omitempty"`
 }
 
 // Encode implement PostRequest interface
@@ -77,4 +77,12 @@ type TargetReportDimension struct {
 	NoteTitle string `json:"note_title,omitempty"`
 	// CampaignID 计划ID，当细分条件选择计划时有该字段
 	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+}
+
+// UnmarshalJSON 必须自己实现：本结构体匿名内嵌了 report.DataReportDTO，
+// 而它自带 UnmarshalJSON（兼容 ube/* 的 camelCase 指标键）。那个方法会被提升到
+// 本类型上，导致标准 json.Unmarshal 只走它、**本结构体自己声明的字段全被静默留空**。
+// report.UnmarshalEmbedded 会把两边都解出来，见该函数注释。
+func (r *TargetReport) UnmarshalJSON(b []byte) error {
+	return report.UnmarshalEmbedded(b, r)
 }

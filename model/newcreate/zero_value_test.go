@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"strings"
 	"testing"
+
+	"github.com/jundaychan/spotlight-mapi/util"
 )
 
 // TestCreateRequestKeepsMeaningfulZeros 回归：新创编里 0 是合法枚举值的字段必须真的发得出去。
@@ -19,19 +21,19 @@ func TestCreateRequestKeepsMeaningfulZeros(t *testing.T) {
 		CreateCascadeInfoList: []CreateCascadeInfo{{
 			Campaign: &CreateCampaign{
 				CampaignName: "回归用例", MarketingTarget: 4, Placement: 2,
-				DeliveryMode: Int(0), OptimizeObjective: Int(0), TimeType: Int(0),
-				TimePeriodType: Int(0), LimitDayBudget: Int(0), SmartSwitch: Int(0),
-				ExploreState: Int(0), SearchFlag: Int(0), AgreedRedStarFee: Int(0),
+				DeliveryMode: util.Ptr(0), OptimizeObjective: util.Ptr(0), TimeType: util.Ptr(0),
+				TimePeriodType: util.Ptr(0), LimitDayBudget: util.Ptr(0), SmartSwitch: util.Ptr(0),
+				ExploreState: util.Ptr(0), SearchFlag: util.Ptr(0), AgreedRedStarFee: util.Ptr(0),
 			},
 			UnitWithCreativeList: []CreateUnitWithCreative{{
 				Unit: &CreateUnit{
-					UnitName: "u", TargetType: Int(0), KeywordGenType: Int(0),
-					KeywordWithBid: []KeywordWithBidDTO{{Keyword: "医美", Bid: 100, PhraseMatchType: Int(0)}},
-					TargetInfo:     &CreateTargetInfo{SearchTargetCityIntent: Int(0)},
+					UnitName: "u", TargetType: util.Ptr(0), KeywordGenType: util.Ptr(0),
+					KeywordWithBid: []KeywordWithBidDTO{{Keyword: "医美", Bid: 100, PhraseMatchType: util.Ptr(0)}},
+					TargetInfo:     &CreateTargetInfo{SearchTargetCityIntent: util.Ptr(0)},
 				},
 				CreativityList: []CreateCreativity{{
 					CreativityName: "c", NoteID: "n1",
-					ConversionType: Int(0), ComponentConvNumIsShow: Bool(false),
+					ConversionType: util.Ptr(0), ComponentConvNumIsShow: util.Ptr(false),
 				}},
 			}},
 		}},
@@ -78,9 +80,9 @@ func TestUpdateRequestKeepsMeaningfulZeros(t *testing.T) {
 		ModCascadeInfoList: []ModCascadeInfo{{
 			Campaign: &ModifyCampaign{
 				CampaignID:   9,
-				TimeType:     Int(0),
-				ExploreState: Int(0),
-				SearchFlag:   Int(0),
+				TimeType:     util.Ptr(0),
+				ExploreState: util.Ptr(0),
+				SearchFlag:   util.Ptr(0),
 				UpdateFields: []string{"time_type", "explore_state", "search_flag", "limit_day_budget"},
 			},
 		}},

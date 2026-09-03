@@ -19,8 +19,9 @@ type BatchAddRequest struct {
 type NegativeKeywordAddItemDTO struct {
 	// Keyword 否定词
 	Keyword string `json:"keyword,omitempty"`
-	// PhraseMatchType 匹配方式，0-精确匹配，1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	// PhraseMatchType 匹配方式，0-精确匹配，1-短语匹配。
+	// 指针：0 必须显式传，否则否词按短语匹配生效，屏蔽范围比预期大
+	PhraseMatchType *int `json:"phrase_match_type,omitempty"`
 }
 
 // Encode implement PostRequest interface

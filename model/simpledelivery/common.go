@@ -25,8 +25,9 @@ type KeywordWithBidDTO struct {
 	Keyword string `json:"keyword,omitempty"`
 	// Bid 出价，单位分
 	Bid int64 `json:"bid,omitempty"`
-	// PhraseMatchType 关键词匹配方式，0-精确匹配、1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	// PhraseMatchType 关键词匹配方式，0-精确匹配、1-短语匹配。
+	// 指针：聚光默认是 1-短语匹配，要精确匹配必须 util.Ptr(0)，不传等于把词放宽
+	PhraseMatchType *int `json:"phrase_match_type,omitempty"`
 }
 
 // PageDTO 实时数据分页信息

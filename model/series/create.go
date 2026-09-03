@@ -86,7 +86,7 @@ type CreateEpisode struct {
 	// MonetizationType 变现模式 1=付费 2=混合 3=免费
 	MonetizationType MonetizationType `json:"monetization_type,omitempty"`
 	// HasNetworkContent 含网赚内容 0=否 1=是
-	HasNetworkContent int `json:"has_network_content,omitempty"`
+	HasNetworkContent *int `json:"has_network_content,omitempty"`
 	// AdUnlockStart 起始广告解锁集数，仅免费/混合，上限<100000
 	AdUnlockStart int `json:"ad_unlock_start,omitempty"`
 	// PayUnlockStart 起始付费解锁集数，仅付费/混合，上限<100000

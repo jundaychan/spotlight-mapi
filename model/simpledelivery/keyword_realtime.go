@@ -21,15 +21,15 @@ type KeywordRealtimeRequest struct {
 	// EndDate 结束时间，格式 yyyy-MM-dd
 	EndDate string `json:"end_date,omitempty"`
 	// DataCaliber 数据指标归因时间类型，0-计费时间、1-转化时间
-	DataCaliber int `json:"data_caliber,omitempty"`
+	DataCaliber *int `json:"data_caliber,omitempty"`
 	// KeywordFilterState 关键词状态，见枚举说明
 	KeywordFilterState int `json:"keyword_filter_state,omitempty"`
 	// PhraseMatchType 关键词匹配类型，0-精准匹配、1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	PhraseMatchType *int `json:"phrase_match_type,omitempty"`
 	// KeywordName 关键词
 	KeywordName string `json:"keyword_name,omitempty"`
 	// MatchType 搜索匹配类型，与 keyword_name 配合，0-包含、1-等于
-	MatchType int `json:"match_type,omitempty"`
+	MatchType *int `json:"match_type,omitempty"`
 }
 
 // Encode implement PostRequest interface

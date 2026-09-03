@@ -19,7 +19,7 @@ type TargetRealtimeRequest struct {
 	// EndDate 结束时间，格式 yyyy-MM-dd
 	EndDate string `json:"end_date,omitempty"`
 	// DataCaliber 数据指标归因时间类型，0-点击时间、1-转化时间
-	DataCaliber int `json:"data_caliber,omitempty"`
+	DataCaliber *int `json:"data_caliber,omitempty"`
 	// Columns 数据指标展示列，传驼峰式的字段名
 	Columns []string `json:"columns,omitempty"`
 	// Filter 筛选项
@@ -40,7 +40,7 @@ type QueryFilterDTO struct {
 	// Name 标的名称
 	Name string `json:"name,omitempty"`
 	// GroupFilterState 标的状态，0-所有未删除状态、1-有效、2-暂停、3-广告组预算不足、4-账户预算不足、5-现金余额不足、6-已删除
-	GroupFilterState int `json:"group_filter_state,omitempty"`
+	GroupFilterState *int `json:"group_filter_state,omitempty"`
 }
 
 // TargetRealtimeResponse 简单投标的层级实时数据 API Response

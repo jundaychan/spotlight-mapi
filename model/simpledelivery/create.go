@@ -52,15 +52,15 @@ type UbeSemiBaseConfigDTO struct {
 	// AssetEventID 事件资产-事件ID
 	AssetEventID uint64 `json:"asset_event_id,omitempty"`
 	// TimeType 投放时间类型，0-长期投放
-	TimeType int `json:"time_type,omitempty"`
+	TimeType *int `json:"time_type,omitempty"`
 	// TimePeriodType 投放时段类型，0-不限，1-指定时段
-	TimePeriodType int `json:"time_period_type,omitempty"`
+	TimePeriodType *int `json:"time_period_type,omitempty"`
 	// TimePeriod 投放时段配置
 	TimePeriod *TimePeriodDTO `json:"time_period,omitempty"`
 	// BiddingStrategy 竞价策略，7-稳定成本
 	BiddingStrategy int `json:"bidding_strategy,omitempty"`
 	// LimitDayBudget 预算类型，0-不限、1-指定预算
-	LimitDayBudget int `json:"limit_day_budget,omitempty"`
+	LimitDayBudget *int `json:"limit_day_budget,omitempty"`
 	// OriginCampaignDayBudget 预算金额，单位分
 	OriginCampaignDayBudget int64 `json:"origin_campaign_day_budget,omitempty"`
 	// DetectURLLink 监测链接URL
@@ -68,13 +68,13 @@ type UbeSemiBaseConfigDTO struct {
 	// ConstraintValue 出价，范围在10-499999之间，单位分
 	ConstraintValue int64 `json:"constraint_value,omitempty"`
 	// PhraseMatchTypeUpgrade 关键词匹配方式升级开关，0-关闭、1-开启，默认-1
-	PhraseMatchTypeUpgrade int `json:"phrase_match_type_upgrade,omitempty"`
+	PhraseMatchTypeUpgrade *int `json:"phrase_match_type_upgrade,omitempty"`
 	// KeywordWithBid 关键词出价信息
 	KeywordWithBid []KeywordWithBidDTO `json:"keyword_with_bid,omitempty"`
 	// KeywordGenType 智能拓词类型，1-智能拓词、2-手动+智能关键词定向
 	KeywordGenType int `json:"keyword_gen_type,omitempty"`
 	// SimpleCreationNoteType 简单投笔记类型，0-全部笔记，1-在投笔记
-	SimpleCreationNoteType int `json:"simple_creation_note_type,omitempty"`
+	SimpleCreationNoteType *int `json:"simple_creation_note_type,omitempty"`
 	// AppUniqueID 应用唯一ID，应用下载必传
 	AppUniqueID uint64 `json:"app_unique_id,omitempty"`
 	// AppDownloadType 应用下载方式，应用下载必传
@@ -114,7 +114,7 @@ type UbeSemiTargetConfigDTO struct {
 // UbeSemiCreativityConfigDTO 简单投创意配置
 type UbeSemiCreativityConfigDTO struct {
 	// ConversionType 组件类型，0-无组件、6-商品/小程序组件、9-小程序组件、11-唤端组件、13-下载组件、15-红书小程序组件、16-微信小程序组件
-	ConversionType int `json:"conversion_type,omitempty"`
+	ConversionType *int `json:"conversion_type,omitempty"`
 	// ConversionComponentTypes 组件位置，0-默认位置
 	ConversionComponentTypes []int `json:"conversion_component_types,omitempty"`
 	// BarContentUserList 引导文案
@@ -122,9 +122,9 @@ type UbeSemiCreativityConfigDTO struct {
 	// AppCompIcon 主图，传图片Base64编码
 	AppCompIcon string `json:"app_comp_icon,omitempty"`
 	// MaskGen 自动优化封面，0-关闭、1-开启、2-自动优化
-	MaskGen int `json:"mask_gen,omitempty"`
+	MaskGen *int `json:"mask_gen,omitempty"`
 	// TitleGen 自动优化标题，0-关闭、1-开启、2-自动优化
-	TitleGen int `json:"title_gen,omitempty"`
+	TitleGen *int `json:"title_gen,omitempty"`
 	// FallBackJumpURL 兜底链接
 	FallBackJumpURL string `json:"fall_back_jump_url,omitempty"`
 	// PrimaryTitle 主标题，最多11个字符
@@ -136,7 +136,7 @@ type UbeSemiCreativityConfigDTO struct {
 	// RemoveNotes 剔除笔记
 	RemoveNotes []string `json:"remove_notes,omitempty"`
 	// NoteRecState 笔记拓展，0-关闭、1-开启，默认0
-	NoteRecState int `json:"note_rec_state,omitempty"`
+	NoteRecState *int `json:"note_rec_state,omitempty"`
 	// UbeWhiteBoxList 自选笔记，最多100个
 	UbeWhiteBoxList []UbeWhiteBoxDTO `json:"ube_white_box_list,omitempty"`
 	// ExcludeNoteTypeList 剔除笔记类型，见 NoteSourceType 枚举

@@ -14,10 +14,11 @@ type AddKeywordRequest struct {
 	UnitID uint64 `json:"unit_id,omitempty"`
 	// AddType 添加关键词的方式
 	// 0-如果已有词不包括本次添加的词，则将原来已有词删除、1-只是进行添加操作，不删除 默认值0
-	AddType int `json:"add_type,omitempty"`
+	// 指针：0 是「替换」1 是「追加」，两者后果差别很大，一律显式传
+	AddType *int `json:"add_type,omitempty"`
 	// PhraseMatchTypeUpgrade 关键词匹配方式升级开关(精确匹配->精确包含)
 	// 0-关闭、1-开启、默认值-1
-	PhraseMatchTypeUpgrade int `json:"phrase_match_type_upgrade,omitempty"`
+	PhraseMatchTypeUpgrade *int `json:"phrase_match_type_upgrade,omitempty"`
 	// KeywordWithBid 关键词列表
 	KeywordWithBid []AddKeywordItem `json:"keyword_with_bid,omitempty"`
 }

@@ -35,7 +35,7 @@ type CrowdReportV2Request struct {
 	// ReportType 人群包报表类型：USER_GROUP、CAMPAIGN、UNIT、CREATIVITY、SPU、NOTE
 	ReportType ReportType `json:"reportType,omitempty"`
 	// DataCaliber 0-归因时间，1-转化时间
-	DataCaliber int `json:"dataCaliber,omitempty"`
+	DataCaliber *int `json:"dataCaliber,omitempty"`
 	// Sorts 排序选项
 	Sorts []SortClauseV2 `json:"sorts,omitempty"`
 	// Columns 指标列

@@ -77,7 +77,7 @@ type CreateTargetInfo struct {
 	// TargetGender 性别定向，0-男，1-女，all-全部，默认all
 	TargetGender string `json:"target_gender,omitempty"`
 	// TargetCityType 城市定向类型，0-默认，1-线级城市
-	TargetCityType int `json:"target_city_type,omitempty"`
+	TargetCityType *int `json:"target_city_type,omitempty"`
 	// TargetCity 城市定向
 	TargetCity string `json:"target_city,omitempty"`
 	// TargetAreaCode 地域编码，-1表示全部，多个用#分隔

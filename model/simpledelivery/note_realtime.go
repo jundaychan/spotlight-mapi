@@ -23,7 +23,7 @@ type NoteRealtimeRequest struct {
 	// EndDate 结束时间，格式 yyyy-MM-dd
 	EndDate string `json:"end_date,omitempty"`
 	// DataCaliber 数据指标归因时间类型，0-计费时间、1-转化时间
-	DataCaliber int `json:"data_caliber,omitempty"`
+	DataCaliber *int `json:"data_caliber,omitempty"`
 	// CreativityFilterState 笔记状态，见枚举说明
 	CreativityFilterState int `json:"creativity_filter_state,omitempty"`
 	// CreativityAuditState 笔记审核状态，1-审核拒绝、2-审核中、3-审核通过、4-审核通过（私密）、99-不满足审核条件
