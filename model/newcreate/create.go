@@ -34,14 +34,15 @@ type CreateCampaign struct {
 	CampaignID uint64 `json:"campaign_id,omitempty"`
 	// CampaignName 计划名称，最多50个字符
 	CampaignName string `json:"campaign_name,omitempty"`
-	// MarketingIndustry 行业类型，1-电商，2-游戏，3-网服工具，4-短剧小说
+	// MarketingIndustry 行业类型，1-电商、2-游戏、3-网服工具、4-短剧小说、5-金融（需加白）。
+	// 0 = 未分类，与不传等价，所以这里不用指针。
 	MarketingIndustry int `json:"marketing_industry,omitempty"`
 	// MarketingTarget 营销诉求，4-产品种草、9-客资收集、13-种草直达、16-应用唤起、20-应用下载、21-小程序推广
 	MarketingTarget int `json:"marketing_target,omitempty"`
 	// Placement 投放位置，1-信息流推广、2-搜索推广、4-全站、7-视频流推广
 	Placement int `json:"placement,omitempty"`
-	// DeliveryMode 投放模式，0-手动投放，1-自动投放，默认-1
-	DeliveryMode int `json:"delivery_mode,omitempty"`
+	// DeliveryMode 投放模式，0-手动投放，1-自动投放。不传时聚光按 -1 处理，所以 0 必须显式传
+	DeliveryMode *int `json:"delivery_mode,omitempty"`
 	// PromotionTarget 标的类型，1-笔记，9-落地页
 	PromotionTarget int `json:"promotion_target,omitempty"`
 	// SpuIDs 推广SPU
@@ -72,8 +73,8 @@ type CreateCampaign struct {
 	PlayletPath string `json:"playlet_path,omitempty"`
 	// PlayletAppUserID 小程序对应的userId
 	PlayletAppUserID string `json:"playlet_app_user_id,omitempty"`
-	// OptimizeObjective 优化目标，见枚举说明
-	OptimizeObjective int `json:"optimize_objective,omitempty"`
+	// OptimizeObjective 优化目标，见枚举说明。0-点击量 是合法值，必须显式传
+	OptimizeObjective *int `json:"optimize_objective,omitempty"`
 	// DeepOptimizeObjective 深度优化目标，不需要时传-1
 	DeepOptimizeObjective int `json:"deep_optimize_objective,omitempty"`
 	// ThirdPlatform 转化平台，1-小红星，2-小红盟
@@ -83,35 +84,35 @@ type CreateCampaign struct {
 	// AssetEventID 事件资产-事件ID
 	AssetEventID uint64 `json:"asset_event_id,omitempty"`
 	// TimeType 投放时间类型，0-长期投放，1-设置起止日期
-	TimeType int `json:"time_type,omitempty"`
+	TimeType *int `json:"time_type,omitempty"`
 	// StartTime 投放开始日期，示例 2023-09-20
 	StartTime string `json:"start_time,omitempty"`
 	// ExpireTime 投放结束日期，示例 2023-09-21
 	ExpireTime string `json:"expire_time,omitempty"`
 	// TimePeriodType 投放时段类型，0-不限，1-指定时段
-	TimePeriodType int `json:"time_period_type,omitempty"`
+	TimePeriodType *int `json:"time_period_type,omitempty"`
 	// TimePeriod 投放时段配置
 	TimePeriod *TimePeriodDTO `json:"time_period,omitempty"`
 	// BiddingStrategy 竞价策略，2-手动出价、3-最大转化、7-稳定成本
 	BiddingStrategy int `json:"bidding_strategy,omitempty"`
 	// LimitDayBudget 预算类型，0-不限、1-指定预算
-	LimitDayBudget int `json:"limit_day_budget,omitempty"`
+	LimitDayBudget *int `json:"limit_day_budget,omitempty"`
 	// OriginCampaignDayBudget 预算金额，单位分
 	OriginCampaignDayBudget int64 `json:"origin_campaign_day_budget,omitempty"`
 	// SmartSwitch 节假日预算上浮，0-关闭、1-开启
-	SmartSwitch int `json:"smart_switch,omitempty"`
+	SmartSwitch *int `json:"smart_switch,omitempty"`
 	// ExploreState 一键起量开关，0-关闭、1-开启
-	ExploreState int `json:"explore_state,omitempty"`
+	ExploreState *int `json:"explore_state,omitempty"`
 	// ExploreConfig 一键起量配置
 	ExploreConfig *ExploreConfig `json:"explore_config,omitempty"`
 	// ExploreStatus 一键起量状态
 	ExploreStatus int `json:"explore_status,omitempty"`
 	// PacingMode 消耗速率，1-匀速消耗、2-加速消耗
 	PacingMode int `json:"pacing_mode,omitempty"`
-	// SearchFlag 搜索快投开关，-1-默认、0-关闭、1-开启
-	SearchFlag int `json:"search_flag,omitempty"`
+	// SearchFlag 搜索快投开关，-1-默认、0-关闭、1-开启。默认是 -1 不是 0，关闭必须显式传 0
+	SearchFlag *int `json:"search_flag,omitempty"`
 	// HorseRace 笔记赛马状态，0-从未开启、1-开启、2-开启后关闭
-	HorseRace int `json:"horse_race,omitempty"`
+	HorseRace *int `json:"horse_race,omitempty"`
 	// DetectURLLink 监测链接URL
 	DetectURLLink string `json:"detect_url_link,omitempty"`
 	// UgLegalAgreementURL 法务协议URL
@@ -126,13 +127,18 @@ type CreateCampaign struct {
 	AppUniqueID uint64 `json:"app_unique_id,omitempty"`
 	// AppID 应用id
 	AppID string `json:"app_id,omitempty"`
+	// AgreedRedStarFee 小红星服务费：0-不同意、1-同意（文档 4877，2026-08-06 新增 / 09-01 变更）。
+	// 不同意则不进行阿里数据回传。不传时聚光按垂类兜底：产品种草(marketing_target=4) 默认「同意」，
+	// 种草直达/UD(13/23/25) 不支持配置恒为「不同意」，其余垂类默认「不同意」。
+	// 想显式表达「不同意」必须传 &0——这正是它用指针的原因。
+	AgreedRedStarFee *int `json:"agreed_red_star_fee,omitempty"`
 }
 
 // CreateUnitWithCreative 单元及创意信息
 type CreateUnitWithCreative struct {
 	// Unit 单元信息
 	Unit *CreateUnit `json:"unit,omitempty"`
-	// CreativityList 创意信息，一次最多新建20个创意
+	// CreativityList 创意信息，一次最多新建100个创意
 	CreativityList []CreateCreativity `json:"creativity_list,omitempty"`
 }
 
@@ -142,26 +148,28 @@ type CreateUnit struct {
 	UnitID uint64 `json:"unit_id,omitempty"`
 	// UnitName 单元名称，最多50个字符
 	UnitName string `json:"unit_name,omitempty"`
-	// PhraseMatchTypeUpgrade 关键词匹配方式升级开关，0-关闭、1-开启，默认-1
-	PhraseMatchTypeUpgrade int `json:"phrase_match_type_upgrade,omitempty"`
+	// PhraseMatchTypeUpgrade 关键词匹配方式升级开关，0-关闭、1-开启。默认是 -1 不是 0
+	PhraseMatchTypeUpgrade *int `json:"phrase_match_type_upgrade,omitempty"`
 	// KeywordWithBid 关键词出价信息
 	KeywordWithBid []KeywordWithBidDTO `json:"keyword_with_bid,omitempty"`
 	// TopicWithTaxnomy 高潜主题
 	TopicWithTaxnomy []TopicWithTaxnomyDTO `json:"topic_with_taxnomy,omitempty"`
 	// FakeUnitID 推词埋点用伪单元ID
 	FakeUnitID uint64 `json:"fake_unit_id,omitempty"`
-	// KeywordGenType 智能拓词类型，-1-无意义、0-手动选词、1-智能拓词、2-手动+智能
-	KeywordGenType int `json:"keyword_gen_type,omitempty"`
+	// KeywordGenType 智能拓词类型，-1-无意义（默认）、0-手动选词、1-智能拓词、2-手动+智能。
+	// 默认是 -1 不是 0，「手动选词」必须显式传 0
+	KeywordGenType *int `json:"keyword_gen_type,omitempty"`
 	// CtrConstraint 智能拓词-点击率约束
 	CtrConstraint float64 `json:"ctr_constraint,omitempty"`
 	// AcpConstraint 智能拓词-点击成本约束
 	AcpConstraint int64 `json:"acp_constraint,omitempty"`
 	// TargetPosition 目标位次，0-不限位置、1-首位、3-前三位
-	TargetPosition int `json:"target_position,omitempty"`
+	TargetPosition *int `json:"target_position,omitempty"`
 	// TargetTemplateID 定向包模板ID
 	TargetTemplateID uint64 `json:"target_template_id,omitempty"`
-	// TargetType 定向类型，0-默认值、2-智能定向、3-高级定向
-	TargetType int `json:"target_type,omitempty"`
+	// TargetType 定向类型，0-默认值（搜索位置传 0）、2-智能定向、3-高级定向。
+	// 用 target_template_id 时整个不传（nil）
+	TargetType *int `json:"target_type,omitempty"`
 	// TargetInfo 定向信息
 	TargetInfo *CreateTargetInfo `json:"target_info,omitempty"`
 	// EventBid 出价，非roi单位为分，roi单位为%
@@ -169,7 +177,7 @@ type CreateUnit struct {
 	// SearchBidRatio 搜索出价系数，默认1.0
 	SearchBidRatio float64 `json:"search_bid_ratio,omitempty"`
 	// AigcNoteBlackRec aigc 智能笔记，0-关闭、1-开启
-	AigcNoteBlackRec int `json:"aigc_note_black_rec,omitempty"`
+	AigcNoteBlackRec *int `json:"aigc_note_black_rec,omitempty"`
 }
 
 // CreateCreativity 创意信息
@@ -179,11 +187,11 @@ type CreateCreativity struct {
 	// NoteSourceType 笔记类型，4-ark代理笔记
 	NoteSourceType int `json:"note_source_type,omitempty"`
 	// NoteRecType 笔记优选类型，0-默认自提笔记，1-spu推荐等
-	NoteRecType int `json:"note_rec_type,omitempty"`
+	NoteRecType *int `json:"note_rec_type,omitempty"`
 	// SubstitutedUserID 代投标识
 	SubstitutedUserID string `json:"substituted_user_id,omitempty"`
 	// KosMsgType 员工笔记私信承接方，0-tok，1-tob
-	KosMsgType int `json:"kos_msg_type,omitempty"`
+	KosMsgType *int `json:"kos_msg_type,omitempty"`
 	// KobMsgType 授权笔记私信承接方，1-B承接，2-b承接
 	KobMsgType int `json:"kob_msg_type,omitempty"`
 	// NoteID 笔记ID
@@ -198,14 +206,15 @@ type CreateCreativity struct {
 	PageID string `json:"page_id,omitempty"`
 	// H5Infos 落地页前链信息
 	H5Infos []H5Info `json:"h5_infos,omitempty"`
-	// ConversionType 组件类型，见枚举说明
-	ConversionType int `json:"conversion_type,omitempty"`
+	// ConversionType 组件类型（必填），见枚举说明。0-无组件 是合法值（应用唤起「不挂链」链路就传 0），
+	// 必须显式传
+	ConversionType *int `json:"conversion_type,omitempty"`
 	// ConversionComponentTypes 组件位置，0-默认位置、1-置顶评论
 	ConversionComponentTypes []int `json:"conversion_component_types,omitempty"`
 	// SecondJumpPattern 组件样式，twinAdsNoteBar-双行样式、engagebar-胶囊样式
 	SecondJumpPattern string `json:"second_jump_pattern,omitempty"`
-	// ComponentConvNumIsShow 组件展示已转换人数
-	ComponentConvNumIsShow bool `json:"component_conv_num_is_show,omitempty"`
+	// ComponentConvNumIsShow 组件展示已转换人数，false-不展示是合法值，必须显式传
+	ComponentConvNumIsShow *bool `json:"component_conv_num_is_show,omitempty"`
 	// BarContent 自定义引导文案，最多6个字符
 	BarContent string `json:"bar_content,omitempty"`
 	// BarContentUserList 引导文案
@@ -240,8 +249,8 @@ type CreateCreativity struct {
 	ExternalGoodsCover string `json:"external_goods_cover,omitempty"`
 	// DataPostURL 数据推送url
 	DataPostURL string `json:"data_post_url,omitempty"`
-	// NeedTextMessage 需要短信验证
-	NeedTextMessage bool `json:"need_text_message,omitempty"`
+	// NeedTextMessage 需要短信验证（留资组件/预约下载组件必传），false 是合法值，必须显式传
+	NeedTextMessage *bool `json:"need_text_message,omitempty"`
 	// MiniProgramPath 小程序链接
 	MiniProgramPath string `json:"mini_program_path,omitempty"`
 	// ExtensionContent 红书小程序主标题

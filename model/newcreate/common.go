@@ -28,7 +28,7 @@ type ExploreConfig struct {
 	// TimePeriod 起量时段配置
 	TimePeriod *TimePeriodDTO `json:"time_period,omitempty"`
 	// TimePeriodType 起量时段类型，0-全时段，1-自定义
-	TimePeriodType int `json:"time_period_type,omitempty"`
+	TimePeriodType *int `json:"time_period_type,omitempty"`
 	// StartTime 起量开始时间，毫秒时间戳
 	StartTime int64 `json:"start_time,omitempty"`
 	// ExpireHour 起量持续时间，单位小时，1-6
@@ -43,8 +43,9 @@ type KeywordWithBidDTO struct {
 	Bid int64 `json:"bid,omitempty"`
 	// KeywordSource 关键词来源
 	KeywordSource int `json:"keyword_source,omitempty"`
-	// PhraseMatchType 关键词匹配方式，0-精确匹配、1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	// PhraseMatchType 关键词匹配方式（必填），0-精确匹配、1-短语匹配。
+	// 聚光默认是 1-短语匹配，想要精确匹配必须显式传 &0，否则等于把词放宽、白花钱
+	PhraseMatchType *int `json:"phrase_match_type,omitempty"`
 	// FeedBid 追投出价
 	FeedBid int64 `json:"feed_bid,omitempty"`
 }
@@ -119,12 +120,13 @@ type CreateTargetInfo struct {
 	KeywordTargetAction []int `json:"keyword_target_action,omitempty"`
 	// DandelionCrowd 蒲公英人群定向
 	DandelionCrowd *DandelionCrowd `json:"dandelion_crowd,omitempty"`
-	// IntelligentExpansion 智能扩量配置
-	IntelligentExpansion int `json:"intelligent_expansion,omitempty"`
-	// SearchTargetCityIntent 地域意图定向，0-居住地用户，1-居住/意图用户，2-所有用户
-	SearchTargetCityIntent int `json:"search_target_city_intent,omitempty"`
-	// TargetGeneralizationSwitch 定向拓宽开关
-	TargetGeneralizationSwitch int `json:"target_generalization_switch,omitempty"`
+	// IntelligentExpansion 智能扩量配置，0-关闭、1-开启
+	IntelligentExpansion *int `json:"intelligent_expansion,omitempty"`
+	// SearchTargetCityIntent 地域意图定向，0-居住地用户，1-居住/意图用户，2-所有用户。
+	// target_area_code=-1 时只能传 0，所以 0 必须发得出去
+	SearchTargetCityIntent *int `json:"search_target_city_intent,omitempty"`
+	// TargetGeneralizationSwitch 定向拓宽开关，0-关闭、1-开启
+	TargetGeneralizationSwitch *int `json:"target_generalization_switch,omitempty"`
 	// UpdateFields Field Mask（仅编辑接口 /jg/cascade/modify 用）：本次要更新的定向字段名集合
 	UpdateFields []string `json:"update_fields,omitempty"`
 }
