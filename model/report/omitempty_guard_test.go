@@ -17,7 +17,7 @@ var omitemptyReviewedOK = map[string]bool{
 	"campaign.ListRequest.marketing_target":                 true, // 3/4/8/9/10/13/14/15/16，无 0
 	"newcreate.CreateCampaign.marketing_target":             true, // 4/9/13/16/20/21，无 0
 	"offline.Request.marketing_target":                      true, // 同上
-	"simpledelivery.UbeSemiBaseConfigDTO.marketing_target":  true, // 16/20/21，无 0
+	"simpledelivery.UbeSemiBaseConfigDTO.marketing_target":  true, // 16/20/21/30，无 0
 	"simpledelivery.UbeSemiBaseConfigDTO.carrier_type":      true, // 4~10/13，无 0
 	"simpledelivery.UbeSemiBaseConfigDTO.constraint_value":  true, // 出价 10~499999 分，0 非法
 	"simpledelivery.TargetRealtimeRequest.marketing_target": true,

@@ -6,7 +6,10 @@ import (
 )
 
 // CreateRequest 新建简单投 API Request
-// 当前只支持应用唤起、应用下载、小程序推广营销诉求
+//
+// ⚠️ 上游只放开这四种营销诉求：16-应用唤起、20-应用下载、21-小程序推广、30-端原生。
+// 客资收集(9)、产品种草(4)、商品销量(3) 等一律建不了——不是参数没填对，是接口不收，
+// 这些诉求只能走标准投的新建口(newcreate)。（文档 6045，2026-09-01 版）
 type CreateRequest struct {
 	// AdvertiserID 广告主ID
 	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
@@ -29,7 +32,7 @@ type UbeSemiBaseConfigDTO struct {
 	CampaignName string `json:"campaign_name,omitempty"`
 	// MarketingIndustry 所属行业，1-电商及交易平台推广，4-短剧小说推广
 	MarketingIndustry int `json:"marketing_industry,omitempty"`
-	// MarketingTarget 营销诉求，16-应用唤起，20-应用下载，21-小程序推广
+	// MarketingTarget 营销诉求，16-应用唤起，20-应用下载，21-小程序推广，30-端原生
 	MarketingTarget int `json:"marketing_target,omitempty"`
 	// DeliveryMode 投放模式，1-自动投放
 	DeliveryMode int `json:"delivery_mode,omitempty"`
@@ -43,7 +46,11 @@ type UbeSemiBaseConfigDTO struct {
 	DeeplinkID uint64 `json:"deeplink_id,omitempty"`
 	// UniversalLinkID Universal Link 直达链接 id
 	UniversalLinkID uint64 `json:"universal_link_id,omitempty"`
-	// OptimizeObjective 优化目标，见枚举说明
+	// OptimizeObjective 优化目标，取值随营销诉求而定：
+	// 【应用唤起】35-APP打开、36-APP进店、37-APP互动、38-APP支付、43-笔记唤端组件点击
+	// 【应用下载】61-APP激活、62-APP注册、64-APP付费
+	// 【小程序推广】74-微信小游戏激活、75-微信小游戏订单支付数
+	// 【端原生】111-端原生付费、112-端原生ROI
 	OptimizeObjective int `json:"optimize_objective,omitempty"`
 	// DeepOptimizeObjective 深度优化目标，不需要时传-1
 	DeepOptimizeObjective int `json:"deep_optimize_objective,omitempty"`
@@ -87,8 +94,10 @@ type UbeSemiBaseConfigDTO struct {
 	PlayletPath string `json:"playlet_path,omitempty"`
 	// PlayletAppUserID 小程序userId
 	PlayletAppUserID string `json:"playlet_app_user_id,omitempty"`
-	// SearchBidRatio 搜索溢价系数
-	SearchBidRatio float64 `json:"search_bid_ratio,omitempty"`
+	// SearchBidRatio 搜索溢价系数（必填）。
+	// 指针：文档没写下界，0 有可能被上游当成「搜索不溢价/不投搜索」的合法输入，
+	// 裸 float64 + omitempty 会把它悄悄丢掉，变成上游默认值。
+	SearchBidRatio *float64 `json:"search_bid_ratio,omitempty"`
 	// UbeSubjectType ube标的类型，1-adv账号，2-SPU，3-行业商品，4-小程序/小游戏，5-APP，6-剧集
 	UbeSubjectType int `json:"ube_subject_type,omitempty"`
 	// UbeSubjectID ube标的id，APP时为app_unique_id，剧集时为剧集ID
@@ -121,10 +130,11 @@ type UbeSemiCreativityConfigDTO struct {
 	BarContentUserList []string `json:"bar_content_user_list,omitempty"`
 	// AppCompIcon 主图，传图片Base64编码
 	AppCompIcon string `json:"app_comp_icon,omitempty"`
-	// MaskGen 自动优化封面，0-关闭、1-开启、2-自动优化
-	MaskGen *int `json:"mask_gen,omitempty"`
-	// TitleGen 自动优化标题，0-关闭、1-开启、2-自动优化
-	TitleGen *int `json:"title_gen,omitempty"`
+	// MaskGenType 自动优化封面（动态创意-封面）：0-关闭，1-仅自提，2-自提+二创，3-仅二创。
+	// 字段名和枚举都在 2026-09-01 文档里改过（旧版叫 mask_gen，枚举只有 0/1/2 且含义不同）
+	MaskGenType *int `json:"mask_gen_type,omitempty"`
+	// TitleGenType 自动优化标题（动态创意-标题）：0-关闭，1-仅自提，2-自提+二创，3-仅二创
+	TitleGenType *int `json:"title_gen_type,omitempty"`
 	// FallBackJumpURL 兜底链接
 	FallBackJumpURL string `json:"fall_back_jump_url,omitempty"`
 	// PrimaryTitle 主标题，最多11个字符
@@ -149,6 +159,11 @@ type UbeSemiCreativityConfigDTO struct {
 	ExcludeKosAuthorList []string `json:"exclude_kos_author_list,omitempty"`
 	// ExcludeGrantAuthorList 反选的授权笔记作者userId列表
 	ExcludeGrantAuthorList []string `json:"exclude_grant_author_list,omitempty"`
+	// AgreedRedStarFee 小红星服务费：0-不同意、1-同意（2026-08-06 新增 / 09-01 变更）。
+	// 不同意则不进行阿里数据回传。不传时聚光按垂类兜底：产品种草(marketing_target=4) 默认「同意」，
+	// 种草直达/UD(13/23/25) 不支持配置恒为「不同意」，其余垂类默认「不同意」。
+	// 想显式表达「不同意」必须传 &0——这正是它用指针的原因。
+	AgreedRedStarFee *int `json:"agreed_red_star_fee,omitempty"`
 }
 
 // UbeWhiteBoxDTO 自选笔记
