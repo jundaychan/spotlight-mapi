@@ -126,8 +126,10 @@ type UbeSemiCreativityConfigDTO struct {
 	ConversionType *int `json:"conversion_type,omitempty"`
 	// ConversionComponentTypes 组件位置，0-默认位置
 	ConversionComponentTypes []int `json:"conversion_component_types,omitempty"`
-	// BarContentUserList 引导文案
+	// BarContentUserList 引导文案（从附录给定的几句里选，如「立即咨询」「购买同款」）
 	BarContentUserList []string `json:"bar_content_user_list,omitempty"`
+	// BarContent 文案内容本身。和 BarContentUserList 是两个字段，别只填一个
+	BarContent string `json:"bar_content,omitempty"`
 	// AppCompIcon 主图，传图片Base64编码
 	AppCompIcon string `json:"app_comp_icon,omitempty"`
 	// MaskGenType 自动优化封面（动态创意-封面）：0-关闭，1-仅自提，2-自提+二创，3-仅二创。
