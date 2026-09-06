@@ -82,23 +82,29 @@ func PrintPostMultipartRequest(url string, mp map[string]string, debug bool) {
 }
 
 // DecodeJSONHttpResponse decode json response with debug
+// DecodeJSONHttpResponse 解 JSON 到 v，并**始终**把原始 body 拷贝一份返回。
+//
+// 以前只在 debug 开着时才返回 body，关着就回 nil——于是 client 想把「-1 且 msg 为空」
+// 这类错误的原始响应带进错误串时，拿到的永远是空的，排查者对着 body= 什么都看不到。
+// 另外旧实现直接返回 buf.Bytes()，而 buf 在 defer 里归还给池子：返回的切片别名了
+// 一块马上会被复用的内存，调用方读到的可能是别的请求的字节。这里一律 copy 出来。
 func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) ([]byte, error) {
 	buf := util.NewBufferPool()
 	defer util.ReleaseBufferPool(buf)
 	tee := io.TeeReader(r, buf)
-	if err := json.NewDecoder(tee).Decode(v); err != nil {
-		return buf.Bytes(), err
+	decErr := json.NewDecoder(tee).Decode(v)
+	// Decode 只读到第一个完整 JSON 值就停，把剩余字节也吞进 buf，body 才是完整的
+	_, _ = io.Copy(io.Discard, tee)
+	bs := append([]byte(nil), buf.Bytes()...)
+	if decErr != nil {
+		return bs, decErr
 	}
-	if !debug {
-		return nil, nil
+	if debug {
+		debugBuf := util.NewBufferPool()
+		defer util.ReleaseBufferPool(debugBuf)
+		if err := json.Indent(debugBuf, bs, "", "\t"); err == nil {
+			log.Println(util.StringsJoin("[DEBUG] [API] http response body:\n", debugBuf.String()))
+		}
 	}
-	bs := buf.Bytes()
-	debugBuf := util.NewBufferPool()
-	defer util.ReleaseBufferPool(debugBuf)
-	if err := json.Indent(debugBuf, bs, "", "\t"); err != nil {
-		return bs, err
-	}
-
-	log.Println(util.StringsJoin("[DEBUG] [API] http response body:\n", debugBuf.String()))
-	return nil, nil
+	return bs, nil
 }
