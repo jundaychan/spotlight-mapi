@@ -2,6 +2,7 @@ package core
 
 import (
 	"bytes"
+	"fmt"
 	"context"
 	"encoding/json"
 	"errors"
@@ -261,9 +262,25 @@ func (c *SDKClient) fetch(httpReq *http.Request, resp model.Response) (*http.Res
 		}, err)
 	}
 	if resp.IsError() {
+		// 上游偶尔回 success:false 但 code 是通配的 -1、msg 是空串（聚光离线报表实测），
+		// 这时 resp.Error() 只剩一个「-1:」，排查者对着它无从下手。
+		// 把原始 body 截一段拼进错误里——它是这次失败唯一的现场。只在 msg 为空时才附，
+		// 正常带说明的错误保持原样，别把日志撑成 JSON 垃圾场。
+		if e := resp.Error(); strings.HasSuffix(strings.TrimSpace(e), ":") {
+			return httpResp, fmt.Errorf("%s body=%s", e, truncateBody(body, 400))
+		}
 		return httpResp, resp
 	}
 	return httpResp, nil
+}
+
+// truncateBody 按字节截断并压掉换行，只给人看个大概，不是要完整转发。
+func truncateBody(b []byte, n int) string {
+	s := strings.Join(strings.Fields(string(b)), " ")
+	if len(s) > n {
+		return s[:n] + "…"
+	}
+	return s
 }
 
 func (c *SDKClient) WithSpan(ctx context.Context, req *http.Request, resp model.Response, payload []byte, fn func(*http.Request, model.Response) (*http.Response, error)) error {
