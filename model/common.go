@@ -239,15 +239,15 @@ type PageDTO struct {
 // Page 分页信息
 type Page struct {
 	// PageNum 页码
-	PageNum int64 `json:"page_num,omitempty"`
+	PageNum int64 `json:"page_num"`
 	// TotalCount 总数量
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 }
 
 // PageRespDTO 分页信息
 type PageRespDTO struct {
 	// PageIndex 页码
-	PageIndex int64 `json:"page_index,omitempty"`
+	PageIndex int64 `json:"page_index"`
 	// TotalCount 总数量
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 }

@@ -59,7 +59,7 @@ type ListResponse struct {
 // ListResult 获取笔记列表结果
 type ListResult struct {
 	// Total 总数
-	Total int `json:"total,omitempty"`
+	Total int `json:"total"`
 	// Notes 笔记信息
 	Notes []BaseNoteItemDTO `json:"notes,omitempty"`
 }
@@ -73,43 +73,43 @@ type BaseNoteItemDTO struct {
 	// Desc 笔记内容
 	Desc string `json:"desc,omitempty"`
 	// CreateTime 创建时间
-	CreateTime int64 `json:"create_time,omitempty"`
+	CreateTime int64 `json:"create_time"`
 	// Author 笔记作者
 	Author string `json:"author,omitempty"`
 	// AuthorImage 作者头像
 	AuthorImage string `json:"author_image,omitempty"`
 	// Status 笔记状态 0：正常 1：不匹配 2：非法 3：已删除 4：反作弊处罚等级一 5：反作弊处罚等级二 6：反作弊处罚等级三 8：私信笔记 9：淘宝笔记 10：设置隐私 11：抽奖笔记 15：反作弊处罚等级 20：笔记需要强绑spu 26：反作弊处罚等级 37：高展拒绝（0，4，5，6表示笔记可选）
-	Status int `json:"status,omitempty"`
+	Status int `json:"status"`
 	// NoteContentType 笔记类型 1:图文笔记 2：视频笔记
-	NoteContentType int `json:"note_content_type,omitempty"`
+	NoteContentType int `json:"note_content_type"`
 	// CooperateState 是否合作笔记
-	CooperateState bool `json:"cooperate_state,omitempty"`
+	CooperateState bool `json:"cooperate_state"`
 	// CooperateStateAuthorization 合作笔记是否启用智能标题 0-不启用、1-启用（base_only为true时不返回）
-	CooperateStateAuthorization int `json:"cooperate_state_authorization,omitempty"`
+	CooperateStateAuthorization int `json:"cooperate_state_authorization"`
 	// IntelligentCreativeLink 合作笔记是否为笔记授权老链路 0-老链路、1-新链路（base_only为true时不返回）
-	IntelligentCreativeLink int `json:"intelligent_creative_link,omitempty"`
+	IntelligentCreativeLink int `json:"intelligent_creative_link"`
 	// Title 标题
 	Title string `json:"title,omitempty"`
 	// ImageList 图片，仅返回笔记封面图片
 	ImageList []string `json:"image_list,omitempty"`
 	// CooperateComponentType 合作组件类型 1：评论区商品组件 2：评论区店铺组件 3：评论区搜索组件 4：评论区私信组件 6：评论区POI组件（笔记类型为合作笔记且笔记有评论区组件时有值，0为默认值无意义，base_only为true时不返回）
-	CooperateComponentType int `json:"cooperate_component_type,omitempty"`
+	CooperateComponentType int `json:"cooperate_component_type"`
 	// CrowdCreationNote 是否为共创笔记 0：否 1：是（base_only为true时不返回）
-	CrowdCreationNote bool `json:"crowd_creation_note,omitempty"`
+	CrowdCreationNote bool `json:"crowd_creation_note"`
 	// ItemID 商品id（base_only为true时不返回）
 	ItemID string `json:"item_id,omitempty"`
 	// ReadCount 阅读数
-	ReadCount int `json:"read_count,omitempty"`
+	ReadCount int `json:"read_count"`
 	// ReadRate 阅读率
 	ReadRate string `json:"read_rate,omitempty"`
 	// InteractCount 互动数
-	InteractCount int `json:"interact_count,omitempty"`
+	InteractCount int `json:"interact_count"`
 	// InteractRate 互动率
 	InteractRate string `json:"interact_rate,omitempty"`
 	// HighQuality 优质笔记(品合) 0：否 1：是（base_only为true时不返回）
-	HighQuality int `json:"high_quality,omitempty"`
+	HighQuality int `json:"high_quality"`
 	// HighPotential 高潜笔记(品合) 0：否 1：是（base_only为true时不返回）
-	HighPotential int `json:"high_potential,omitempty"`
+	HighPotential int `json:"high_potential"`
 	// ItemIDs 笔记挂接的商品，对于商卡笔记为社区绑定的商品集合，否则为聚光绑定的商品id集合（base_only为true时不返回）
 	ItemIDs []string `json:"item_ids,omitempty"`
 	// NoteSpuInfo 笔记绑定spu信息，为null表示当前笔记未绑定spu（base_only为true时不返回，废弃）
@@ -123,11 +123,11 @@ type BaseNoteItemDTO struct {
 	// Taxonomy3 三级类目信息（当笔记没有三级类目信息时，展示"类目未知"）
 	Taxonomy3 string `json:"taxonomy3,omitempty"`
 	// IsHitStrategy 是否命中策略 0:未命中，1：命中
-	IsHitStrategy int `json:"is_hit_strategy,omitempty"`
+	IsHitStrategy int `json:"is_hit_strategy"`
 	// HitStrategyContent 命中策略内容，多个策略之间用逗号分隔
 	HitStrategyContent string `json:"hit_strategy_content,omitempty"`
 	// WinHorseNote 是否为优胜笔记
-	WinHorseNote bool `json:"win_horse_note,omitempty"`
+	WinHorseNote bool `json:"win_horse_note"`
 	// StaffTag 员工标签，仅员工笔记有值
 	StaffTag string `json:"staff_tag,omitempty"`
 	// StaffArea 地域，仅员工笔记有值
@@ -135,29 +135,29 @@ type BaseNoteItemDTO struct {
 	// NoteURL 笔记链接，有效期两个月（base_only为true时不返回）
 	NoteURL string `json:"note_url,omitempty"`
 	// HasShopCard 是否为商品笔记（base_only为true时不返回）
-	HasShopCard bool `json:"has_shop_card,omitempty"`
+	HasShopCard bool `json:"has_shop_card"`
 }
 
 // NoteMultiSpuInfo 笔记绑定spu信息
 type NoteMultiSpuInfo struct {
 	// BindID 绑定id
-	BindID uint64 `json:"bind_id,omitempty"`
+	BindID uint64 `json:"bind_id"`
 	// SpuID spu_id
 	SpuID string `json:"spu_id,omitempty"`
 	// SpuName spu名称
 	SpuName string `json:"spu_name,omitempty"`
 	// ExceedModifyLimitIn30Day 是否超出30内修改绑定三次限制 true：是 false：否
-	ExceedModifyLimitIn30Day bool `json:"exceed_modify_limit_in_30_day,omitempty"`
+	ExceedModifyLimitIn30Day bool `json:"exceed_modify_limit_in_30_day"`
 	// ExceedModifyLimitToday 是否超出一天内修改绑定一次限制 true：是 false：否
-	ExceedModifyLimitToday bool `json:"exceed_modify_limit_today,omitempty"`
+	ExceedModifyLimitToday bool `json:"exceed_modify_limit_today"`
 	// BindByCurAccount 是否为当前账户绑定
-	BindByCurAccount bool `json:"bind_by_cur_account,omitempty"`
+	BindByCurAccount bool `json:"bind_by_cur_account"`
 	// BindAuditStatus 绑定关系审核状态 0：未绑定 1：申请中 2：通过 3：拒绝 4：等待审核
-	BindAuditStatus int `json:"bind_audit_status,omitempty"`
+	BindAuditStatus int `json:"bind_audit_status"`
 	// BindAuditReason 绑定关系审核拒绝原因
 	BindAuditReason string `json:"bind_audit_reason,omitempty"`
 	// SpuType spu类型 1：标品 2：非标品 3：品牌 4:系列
-	SpuType int `json:"spu_type,omitempty"`
+	SpuType int `json:"spu_type"`
 	// SpuSubName 非标、品牌名称
 	SpuSubName string `json:"spu_sub_name,omitempty"`
 	// SeriesID 系列ID

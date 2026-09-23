@@ -45,5 +45,5 @@ type UpdateResponse struct {
 // UpdateResult 更新定向包结果
 type UpdateResult struct {
 	// TemplateID 定向包id
-	TemplateID uint64 `json:"template_id,omitempty"`
+	TemplateID uint64 `json:"template_id"`
 }

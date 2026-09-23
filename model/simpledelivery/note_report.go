@@ -66,11 +66,11 @@ type NoteReportDimension struct {
 	// Time 时间
 	Time string `json:"time,omitempty"`
 	// CampaignID 计划ID，当细分条件选择标的时有该字段
-	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID model.Uint64 `json:"campaign_id"`
 	// CampaignName 计划名称，当细分条件选择标的时有该字段
 	CampaignName string `json:"campaign_name,omitempty"`
 	// CreativityID 创意ID，当细分条件选择计划时该字段值有效
-	CreativityID model.Uint64 `json:"creativity_id,omitempty"`
+	CreativityID model.Uint64 `json:"creativity_id"`
 	// CreativityName 创意名称，当细分条件选择计划时该字段值有效
 	CreativityName string `json:"creativity_name,omitempty"`
 	// NoteID 笔记ID

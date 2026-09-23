@@ -35,23 +35,23 @@ type DailyBudgetBalanceResponse struct {
 // DailyBudgetBalance 账户日预算余额数据
 type DailyBudgetBalance struct {
 	// TotalBalance 账户余额
-	TotalBalance int64 `json:"total_balance,omitempty"`
+	TotalBalance int64 `json:"total_balance"`
 	// CashBalance 现金余额
-	CashBalance int64 `json:"cash_balance,omitempty"`
+	CashBalance int64 `json:"cash_balance"`
 	// ReturnBalance 常规返货余额
-	ReturnBalance int64 `json:"return_balance,omitempty"`
+	ReturnBalance int64 `json:"return_balance"`
 	// CreditBalance 授信金额
-	CreditBalance int64 `json:"credit_balance,omitempty"`
+	CreditBalance int64 `json:"credit_balance"`
 	// FreezeBalance 冻结余额
-	FreezeBalance int64 `json:"freeze_balance,omitempty"`
+	FreezeBalance int64 `json:"freeze_balance"`
 	// AvailableBalance 可用金额
-	AvailableBalance int64 `json:"available_balance,omitempty"`
+	AvailableBalance int64 `json:"available_balance"`
 	// TodaySpend 今日花费
-	TodaySpend int64 `json:"today_spend,omitempty"`
+	TodaySpend int64 `json:"today_spend"`
 	// CompensateReturnBalance 赔付返货余额
-	CompensateReturnBalance int64 `json:"compensate_return_balance,omitempty"`
+	CompensateReturnBalance int64 `json:"compensate_return_balance"`
 	// AccountBudget 账户日预算
-	AccountBudget int `json:"account_budget,omitempty"`
+	AccountBudget int `json:"account_budget"`
 	// LimitDayBudget 是否限制预算 0-不限预算，1-限制预算
-	LimitDayBudget LimitDayBudget `json:"limit_day_budget,omitempty"`
+	LimitDayBudget LimitDayBudget `json:"limit_day_budget"`
 }

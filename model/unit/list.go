@@ -40,7 +40,7 @@ type ListResponse struct {
 
 type ListResult struct {
 	// TotalCount 总数
-	TotalCount int `json:"total_count,omitempty"`
+	TotalCount int `json:"total_count"`
 	// UnitInfos 单元信息
 	UnitInfos []Unit `json:"unit_infos,omitempty"`
 }

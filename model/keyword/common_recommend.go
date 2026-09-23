@@ -52,7 +52,7 @@ type CommonRecommendResult struct {
 	// WordList 推荐词列表
 	WordList []Word `json:"word_list,omitempty"`
 	// BagMonthPV 月pv
-	BagMonthPV int64 `json:"bag_month_pv,omitempty"`
+	BagMonthPV int64 `json:"bag_month_pv"`
 	// WordNum 推荐词数量
-	WordNum int `json:"word_num,omitempty"`
+	WordNum int `json:"word_num"`
 }

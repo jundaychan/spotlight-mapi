@@ -68,17 +68,17 @@ type KeywordDTO struct {
 // BaseKeywordDTO 创意属性信息
 type BaseKeywordDTO struct {
 	// KeywordID 关键词ID
-	KeywordID uint64 `json:"keyword_id,omitempty"`
+	KeywordID uint64 `json:"keyword_id"`
 	// Keyword 关键词名称
 	Keyword string `json:"keyword,omitempty"`
 	// UserBidStrategy 出价策略：0：未使用出价策略1：已使用出价策略
-	UserBidStrategy int `json:"user_bid_strategy,omitempty"`
+	UserBidStrategy int `json:"user_bid_strategy"`
 	// KeywordEnable 关键词状态：0：未上线1：已上线
-	KeywordEnable int `json:"keyword_enable,omitempty"`
+	KeywordEnable int `json:"keyword_enable"`
 	// KeywordFilterState 关键词状态过滤2：删除3：暂停4：已被单元暂停5：已被计划暂停6：现金余额不足7：计划预算不足8：有效9：计划未开始10：计划已结束11：计划处于暂停阶段12：账户日预算不足
-	KeywordFilterState int `json:"keyword_filter_state,omitempty"`
+	KeywordFilterState int `json:"keyword_filter_state"`
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 }

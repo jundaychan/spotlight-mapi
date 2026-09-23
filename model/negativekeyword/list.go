@@ -39,13 +39,13 @@ type ListResult struct {
 // NegativeKeywordItemDTO 否定词详情
 type NegativeKeywordItemDTO struct {
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// NegativeKeywordID 否定词id
-	NegativeKeywordID uint64 `json:"negative_keyword_id,omitempty"`
+	NegativeKeywordID uint64 `json:"negative_keyword_id"`
 	// Keyword 否定词
 	Keyword string `json:"keyword,omitempty"`
 	// PhraseMatchType 匹配方式，0-精确匹配，1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	PhraseMatchType int `json:"phrase_match_type"`
 }

@@ -54,15 +54,15 @@ type MobileAppListResult struct {
 // MobileAppPage 分页信息
 type MobileAppPage struct {
 	// PageIndex 页码
-	PageIndex int32 `json:"page_index,omitempty"`
+	PageIndex int32 `json:"page_index"`
 	// TotalCount 总数
-	TotalCount int32 `json:"total_count,omitempty"`
+	TotalCount int32 `json:"total_count"`
 }
 
 // MobileAppInfo 应用信息
 type MobileAppInfo struct {
 	// ID 唯一id，投放时app_unique_id填此值
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// AppID 应用id，投放时app_id填此值
 	AppID string `json:"app_id,omitempty"`
 	// AppName 应用名称
@@ -72,7 +72,7 @@ type MobileAppInfo struct {
 	// Version 版本号
 	Version string `json:"version,omitempty"`
 	// PublishTime 发布时间
-	PublishTime int64 `json:"publish_time,omitempty"`
+	PublishTime int64 `json:"publish_time"`
 	// Desc 应用描述
 	Desc string `json:"desc,omitempty"`
 	// Developer 开发者
@@ -80,11 +80,11 @@ type MobileAppInfo struct {
 	// Icon 应用图标
 	Icon string `json:"icon,omitempty"`
 	// Platform 应用类型：1-iOS，2-android 3-android-apk
-	Platform int32 `json:"platform,omitempty"`
+	Platform int32 `json:"platform"`
 	// ReviewStatus 审核状态，只有1通过
-	ReviewStatus int32 `json:"review_status,omitempty"`
+	ReviewStatus int32 `json:"review_status"`
 	// PublishStatus 发布状态，只有1发布
-	PublishStatus int64 `json:"publish_status,omitempty"`
+	PublishStatus int64 `json:"publish_status"`
 	// AuditFailedReason 审核失败原因（暂时没有）
 	AuditFailedReason string `json:"audit_failed_reason,omitempty"`
 }

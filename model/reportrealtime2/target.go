@@ -64,39 +64,39 @@ type TargetDTO struct {
 // BaseCampaignDTO 计划属性信息
 type BaseCampaignDTO struct {
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// CampaignFilterState 计划状态
-	CampaignFilterState int `json:"campaign_filter_state,omitempty"`
+	CampaignFilterState int `json:"campaign_filter_state"`
 	// CampaignCreateTime 计划创建时间: 格式yyyy-MM-dd HH:mm:ss
 	CampaignCreateTime string `json:"campaign_create_time,omitempty"`
 	// CampaignEnable 计划启停状态：0：暂停，1：开启
-	CampaignEnable int `json:"campaign_enable,omitempty"`
+	CampaignEnable int `json:"campaign_enable"`
 	// MarketingTarget 营销诉求
-	MarketingTarget int `json:"marketing_target,omitempty"`
+	MarketingTarget int `json:"marketing_target"`
 	// Placement 广告类型:1：信息流，2：搜索，4：全站智投，7：视频内流
-	Placement int `json:"placement,omitempty"`
+	Placement int `json:"placement"`
 	// OptimizeTarget 推广目标
-	OptimizeTarget int `json:"optimize_target,omitempty"`
+	OptimizeTarget int `json:"optimize_target"`
 	// PromotionTarget 投放标的:1：笔记，2：商品，7：外链落地页，9：落地页，18：直播间
-	PromotionTarget int `json:"promotion_target,omitempty"`
+	PromotionTarget int `json:"promotion_target"`
 	// BiddingStrategy 出价方式：2：手动出价3：自动出价
-	BiddingStrategy int `json:"bidding_strategy,omitempty"`
+	BiddingStrategy int `json:"bidding_strategy"`
 	// ConstraintType 成本控制方式
-	ConstraintType int `json:"constraint_type,omitempty"`
+	ConstraintType int `json:"constraint_type"`
 	// ConstraintValue 成本控制值
-	ConstraintValue int `json:"constraint_value,omitempty"`
+	ConstraintValue int `json:"constraint_value"`
 	// LimitDayBudget 预算类型：0：不限预算，1：指定预算
-	LimitDayBudget int `json:"limit_day_budget,omitempty"`
+	LimitDayBudget int `json:"limit_day_budget"`
 	// OriginCampaignDayBudget 计划日预算
-	OriginCampaignDayBudget int `json:"origin_campaign_day_budget,omitempty"`
+	OriginCampaignDayBudget int `json:"origin_campaign_day_budget"`
 	// BudgetState 预算状态，0: 计划预算不足，1 计划预算充足
-	BudgetState int `json:"budget_state,omitempty"`
+	BudgetState int `json:"budget_state"`
 	// SmartSwitch 是否节假日预算上调，0: 关闭，1: 开启
-	SmartSwitch int `json:"smart_switch,omitempty"`
+	SmartSwitch int `json:"smart_switch"`
 	// PacingMode 投放速率，1: 匀速投放，2: 加速投放
-	PacingMode int `json:"pacing_mode,omitempty"`
+	PacingMode int `json:"pacing_mode"`
 	// StartTime 计划开始时间：格式yyyy-MM-dd
 	StartTime string `json:"start_time,omitempty"`
 	// ExpireTime 计划结束时间：格式yyyy-MM-dd
@@ -104,33 +104,33 @@ type BaseCampaignDTO struct {
 	// TimePeriod 时段: 默认168个1
 	TimePeriod string `json:"time_period,omitempty"`
 	// TimePeriodType 推广时段类型, 0: 全时段，1:自定义时间段
-	TimePeriodType int `json:"time_period_type,omitempty"`
+	TimePeriodType int `json:"time_period_type"`
 	// BuildType 搭建方式，0：标准搭建，1：省心智投
-	BuildType int `json:"build_type,omitempty"`
+	BuildType int `json:"build_type"`
 	// FeedFlag 是否搜索追投信息流：0: 否，1：是
-	FeedFlag int `json:"feed_flag,omitempty"`
+	FeedFlag int `json:"feed_flag"`
 	// SearchFlag 是否信息流快投搜索：0: 否，1：是
-	SearchFlag int `json:"search_flag,omitempty"`
+	SearchFlag int `json:"search_flag"`
 	// MigrationStatus 专业号平台计划迁移状态: 0：非迁移计划，2：迁移计划
-	MigrationStatus int `json:"migration_status,omitempty"`
+	MigrationStatus int `json:"migration_status"`
 }
 
 // BaseUnitDTO 单元属性信息
 type BaseUnitDTO struct {
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// UnitName 单元名称
 	UnitName string `json:"unit_name,omitempty"`
 	// UnitFilterState 单元状态
-	UnitFilterState int `json:"unit_filter_state,omitempty"`
+	UnitFilterState int `json:"unit_filter_state"`
 	// UnitCreateTime 单元创建时间：格式 yyyy-MM-dd HH:mm:ss
 	UnitCreateTime string `json:"unit_create_time,omitempty"`
 	// UnitEnable 单元启停状态：0：暂停，1：开启
-	UnitEnable int `json:"unit_enable,omitempty"`
+	UnitEnable int `json:"unit_enable"`
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// EventBid 出价
-	EventBid int `json:"event_bid,omitempty"`
+	EventBid int `json:"event_bid"`
 }
 
 // BaseTargetDTO 定向属性信息
@@ -138,11 +138,11 @@ type BaseTargetDTO struct {
 	// TargetName 定向名称
 	TargetName string `json:"target_name,omitempty"`
 	// TargetStatus 定向状态
-	TargetStatus int `json:"target_status,omitempty"`
+	TargetStatus int `json:"target_status"`
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// TargetID 定向id
-	TargetID uint64 `json:"target_id,omitempty"`
+	TargetID uint64 `json:"target_id"`
 }

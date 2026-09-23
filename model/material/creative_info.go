@@ -48,7 +48,7 @@ type MaterialInfo struct {
 	// NoteID 笔记 id
 	NoteID string `json:"note_id,omitempty"`
 	// CreativityID 创意 id
-	CreativityID int64 `json:"creativity_id,omitempty"`
+	CreativityID int64 `json:"creativity_id"`
 }
 
 // TitleInfo 标题信息
@@ -56,17 +56,17 @@ type TitleInfo struct {
 	// Title 标题
 	Title string `json:"title,omitempty"`
 	// Origin 是否原素材
-	Origin bool `json:"origin,omitempty"`
+	Origin bool `json:"origin"`
 	// Selected 是否选择
-	Selected bool `json:"selected,omitempty"`
+	Selected bool `json:"selected"`
 	// AuditStatus 审核状态
-	AuditStatus int32 `json:"audit_status,omitempty"`
+	AuditStatus int32 `json:"audit_status"`
 	// AuditReason 审核原因
 	AuditReason string `json:"audit_reason,omitempty"`
 	// TitleSource 标题来源
-	TitleSource int32 `json:"title_source,omitempty"`
+	TitleSource int32 `json:"title_source"`
 	// TitleTab 标题tab
-	TitleTab int32 `json:"title_tab,omitempty"`
+	TitleTab int32 `json:"title_tab"`
 	// Version 版本
 	Version string `json:"version,omitempty"`
 }
@@ -78,13 +78,13 @@ type PhotoInfo struct {
 	// FileURL 图片url
 	FileURL string `json:"file_url,omitempty"`
 	// Origin 是否原始素材
-	Origin bool `json:"origin,omitempty"`
+	Origin bool `json:"origin"`
 	// Selected 是否选择
-	Selected bool `json:"selected,omitempty"`
+	Selected bool `json:"selected"`
 	// AuditStatus 审核状态
-	AuditStatus int32 `json:"audit_status,omitempty"`
+	AuditStatus int32 `json:"audit_status"`
 	// AuditReason 审核原因
 	AuditReason string `json:"audit_reason,omitempty"`
 	// ImageSource 图片来源
-	ImageSource int32 `json:"image_source,omitempty"`
+	ImageSource int32 `json:"image_source"`
 }

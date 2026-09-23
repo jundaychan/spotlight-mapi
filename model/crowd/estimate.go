@@ -37,7 +37,7 @@ type EstimateResult struct {
 	// CrowdNum 受众人数,精确到百万
 	CrowdNum string `json:"crowd_num,omitempty"`
 	// RawCrowdNum 受众人数，纯数值
-	RawCrowdNum int64 `json:"raw_crowd_num,omitempty"`
+	RawCrowdNum int64 `json:"raw_crowd_num"`
 	// CrowdScope 受众范围1-偏窄,2-合适,3-偏广
-	CrowdScope int `json:"crowd_scope,omitempty"`
+	CrowdScope int `json:"crowd_scope"`
 }

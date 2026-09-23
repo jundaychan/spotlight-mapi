@@ -65,25 +65,25 @@ type CampaignDTO struct {
 // BaseCampaignDTO 计划实体对象
 type BaseCampaignDTO struct {
 	// CampaignID 计划ID
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// CampaignGroupID 广告组ID
-	CampaignGroupID uint64 `json:"campaign_group_id,omitempty"`
+	CampaignGroupID uint64 `json:"campaign_group_id"`
 	// CampaignGroupName 标的名称
 	CampaignGroupName string `json:"campaign_group_name,omitempty"`
 	// CampaignEnable 计划上线状态，0-下线、1-上线
-	CampaignEnable int `json:"campaign_enable,omitempty"`
+	CampaignEnable int `json:"campaign_enable"`
 	// CampaignFilterState 计划状态，见枚举说明
-	CampaignFilterState int `json:"campaign_filter_state,omitempty"`
+	CampaignFilterState int `json:"campaign_filter_state"`
 	// CampaignCreateTime 创建时间，格式 yyyy-MM-dd HH:mm:ss
 	CampaignCreateTime string `json:"campaign_create_time,omitempty"`
 	// LimitDayBudget 是否限制日预算，0-不限、1-限制
-	LimitDayBudget int `json:"limit_day_budget,omitempty"`
+	LimitDayBudget int `json:"limit_day_budget"`
 	// OriginCampaignDayBudget 计划日预算，单位分
-	OriginCampaignDayBudget int64 `json:"origin_campaign_day_budget,omitempty"`
+	OriginCampaignDayBudget int64 `json:"origin_campaign_day_budget"`
 	// SmartSwitch 是否开启节假日预算上浮，0-不开启、1-开启
-	SmartSwitch int `json:"smart_switch,omitempty"`
+	SmartSwitch int `json:"smart_switch"`
 	// ConstraintValue 出价，单位分
-	ConstraintValue int64 `json:"constraint_value,omitempty"`
+	ConstraintValue int64 `json:"constraint_value"`
 }

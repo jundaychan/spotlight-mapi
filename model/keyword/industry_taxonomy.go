@@ -40,5 +40,5 @@ type Taxonomy struct {
 	// Children 子层级
 	Children []Taxonomy `json:"children,omitempty"`
 	// TaxonomyLevel 行业层级
-	TaxonomyLevel int `json:"taxonomy_level,omitempty"`
+	TaxonomyLevel int `json:"taxonomy_level"`
 }

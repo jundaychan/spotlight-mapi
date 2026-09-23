@@ -70,7 +70,7 @@ type CampaignReportDimension struct {
 	// Time 时间
 	Time string `json:"time,omitempty"`
 	// CampaignID 计划ID
-	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID model.Uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// NoteID 笔记ID，当细分条件选择笔记时有该字段

@@ -42,7 +42,7 @@ type SPUResponse struct {
 // SPUReportList SPU层级离线数据列表
 type SPUReportList struct {
 	// TotalCount 总条数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 	// List 详细数据
 	List []SPUReport `json:"data_list,omitempty"`
 	// AggregationData 汇总数据
@@ -59,13 +59,13 @@ type SPUReport struct {
 	Time string `json:"time,omitempty"`
 	report.DataReportDTO
 	// IUserNum 新增种草人群; 用户点击推广后转化为相应SPU的I或TI人群的总人数
-	IUserNum model.Int64 `json:"i_user_num,omitempty"`
+	IUserNum model.Int64 `json:"i_user_num"`
 	// TiUserNum 新增深度种草人群; 用户点击推广后转化为相应SPU的TI人群的总人数
-	TiUserNum model.Int64 `json:"ti_user_num,omitempty"`
+	TiUserNum model.Int64 `json:"ti_user_num"`
 	// IUserPrice 新增种草人群成本; 推广消费/新增种草人群
-	IUserPrice model.Float64 `json:"i_user_price,omitempty"`
+	IUserPrice model.Float64 `json:"i_user_price"`
 	// TiUserPrice 新增深度种草人群成本; 推广消费/新增深度种草人群
-	TiUserPrice model.Float64 `json:"ti_user_price,omitempty"`
+	TiUserPrice model.Float64 `json:"ti_user_price"`
 }
 
 // UnmarshalJSON 必须自己实现：本结构体匿名内嵌了 report.DataReportDTO，

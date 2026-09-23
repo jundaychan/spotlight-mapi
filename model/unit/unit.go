@@ -7,17 +7,17 @@ import (
 // Unit 广告单元
 type Unit struct {
 	// ID 单元id
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// Name 单元名称
 	Name string `json:"name,omitempty"`
 	// Enable 投放状态：0：暂停1：投放中
-	Enable int `json:"enable,omitempty"`
+	Enable int `json:"enable"`
 	// EventBid 出价,单位(分)
-	EventBid int64 `json:"event_bid,omitempty"`
+	EventBid int64 `json:"event_bid"`
 	// TargetType 定向类型1-通投,2-智能定向,3-高级定向
-	TargetType enum.UnitTargetType `json:"target_type,omitempty"`
+	TargetType enum.UnitTargetType `json:"target_type"`
 	// ItemIDs 商品ID
 	ItemIDs []string `json:"item_ids,omitempty"`
 	// NoteIDs 笔记ID
@@ -31,21 +31,21 @@ type Unit struct {
 	// UnitExternalPageURL 外链Url
 	UnitExternalPageURL string `json:"unit_external_page_url,omitempty"`
 	// LandingPageType 落地页链接类型:1-表单,2-外跳链接，0-默认值，无实际意义
-	LandingPageType enum.LandingPageType `json:"landing_page_type,omitempty"`
+	LandingPageType enum.LandingPageType `json:"landing_page_type"`
 	// TargetPosition 抢占资源1-首位,3-第三位，0-不限位置
-	TargetPosition int `json:"target_position,omitempty"`
+	TargetPosition int `json:"target_position"`
 	// TargetGoal 抢占目标1-点击抢占市场份额，0-默认值，无实际意义
-	TargetGoal int `json:"target_goal,omitempty"`
+	TargetGoal int `json:"target_goal"`
 	// WordTagName 词包名称
 	WordTagName string `json:"word_tag_name,omitempty"`
 	// ProportionGoal 占比目标
-	ProportionGoal float64 `json:"proportion_goal,omitempty"`
+	ProportionGoal float64 `json:"proportion_goal"`
 	// BusinessTreeName 推广业务信息示例：生活服务>婚纱摄影;美妆个护;母婴>母婴食品>奶粉
 	BusinessTreeName string `json:"business_tree_name,omitempty"`
 	// UnitLandingPageSpec 落地页表单描述
 	UnitLandingPageSpec []string `json:"unit_landing_page_spec,omitempty"`
 	// KeywordTargetPeriod 关键词定向行为周期，单位天，枚举包括 3，7，15，30
-	KeywordTargetPeriod int `json:"keyword_target_period,omitempty"`
+	KeywordTargetPeriod int `json:"keyword_target_period"`
 	// KeywordTargetAction 关键词定向行为1:搜索,2:互动,3:阅读
 	KeywordTargetAction []enum.KeywordTargetAction `json:"keyword_target_action,omitempty"`
 	// SubstitutedUserID 代投账号b的userId
@@ -61,7 +61,7 @@ type Unit struct {
 	// TargetConfig 定向信息
 	TargetConfig *TargetConfig `json:"target_config,omitempty"`
 	// KeywordGenType 单元选词方式： -1:无意义默认值 0:手动选词 1:智能拓词 2:手动+智能
-	KeywordGenType enum.KeywordGenType `json:"keyword_gen_type,omitempty"`
+	KeywordGenType enum.KeywordGenType `json:"keyword_gen_type"`
 	// KeywordWithBid 选词出价
 	KeywordWithBid []KeywordWithBid `json:"keyword_with_bid,omitempty"`
 }

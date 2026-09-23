@@ -33,11 +33,11 @@ type KeywordWithBidDTO struct {
 // PageDTO 实时数据分页信息
 type PageDTO struct {
 	// PageNum 页码
-	PageNum int64 `json:"page_num,omitempty"`
+	PageNum int64 `json:"page_num"`
 	// PageSize 页大小
-	PageSize int64 `json:"page_size,omitempty"`
+	PageSize int64 `json:"page_size"`
 	// TotalPage 总页数
-	TotalPage int64 `json:"total_page,omitempty"`
+	TotalPage int64 `json:"total_page"`
 	// TotalCount 总记录数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 }

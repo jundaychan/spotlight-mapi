@@ -71,21 +71,21 @@ type GroupDTO struct {
 // GroupParadigm 广告组实体对象
 type GroupParadigm struct {
 	// AdvertiserID 广告主ID
-	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
+	AdvertiserID uint64 `json:"advertiser_id"`
 	// CampaignGroupID 广告组ID（标的ID）。ube/campaign、ube/note、ube/keyword 三个实时口必传且只能传一个，就是这里拿
-	CampaignGroupID uint64 `json:"campaign_group_id,omitempty"`
+	CampaignGroupID uint64 `json:"campaign_group_id"`
 	// GroupType 标的类型，1-全自动托管、4-半自动托管
-	GroupType int `json:"group_type,omitempty"`
+	GroupType int `json:"group_type"`
 	// MarketingTarget 营销诉求，4-产品种草、9-客资收集、13-种草直达、16-应用唤起、20-应用下载、21-小程序推广
-	MarketingTarget int `json:"marketing_target,omitempty"`
+	MarketingTarget int `json:"marketing_target"`
 	// CampaignGroupName 标的名称
 	CampaignGroupName string `json:"campaign_group_name,omitempty"`
 	// Enable 上线状态，0-下线、1-上线
-	Enable int `json:"enable,omitempty"`
+	Enable int `json:"enable"`
 	// GroupFilterState 标的状态，0-所有未删除状态、1-有效、2-暂停、3-广告组预算不足、4-账户预算不足、5-现金余额不足、6-已删除
-	GroupFilterState int `json:"group_filter_state,omitempty"`
+	GroupFilterState int `json:"group_filter_state"`
 	// CreateTime 创建时间，格式 yyyy-MM-dd
 	CreateTime string `json:"create_time,omitempty"`
 	// ValidCampaignCount 关联计划数
-	ValidCampaignCount int `json:"valid_campaign_count,omitempty"`
+	ValidCampaignCount int `json:"valid_campaign_count"`
 }

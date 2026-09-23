@@ -8,11 +8,11 @@ type Word struct {
 	// RecommendReason 推荐理由
 	RecommendReason []string `json:"recommend_reason,omitempty"`
 	// Bid 市场出价，单位：分
-	Bid int64 `json:"bid,omitempty"`
+	Bid int64 `json:"bid"`
 	// MonthPV 月均搜索指数(月pv)
-	MonthPV int64 `json:"monthpv,omitempty"`
+	MonthPV int64 `json:"monthpv"`
 	// Source 	词来源
-	Source int `json:"source,omitempty"`
+	Source int `json:"source"`
 }
 
 // WordBag 词包信息
@@ -26,7 +26,7 @@ type WordBag struct {
 	// WordList   所有词信息
 	WordList []Word `json:"word_list,omitempty"`
 	// Source 词包来源1：自建2：平台
-	Source int `json:"source,omitempty"`
+	Source int `json:"source"`
 	// KeywordSource 词来源
-	KeywordSource int `json:"keyword_source,omitempty"`
+	KeywordSource int `json:"keyword_source"`
 }

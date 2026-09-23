@@ -47,5 +47,5 @@ type AddKeywordResponse struct {
 // AddKeywordResult 修改单元关键词结果
 type AddKeywordResult struct {
 	// UploadKeywordNum 上传成功的关键词的个数
-	UploadKeywordNum int `json:"upload_keyword_num,omitempty"`
+	UploadKeywordNum int `json:"upload_keyword_num"`
 }

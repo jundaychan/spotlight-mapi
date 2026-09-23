@@ -293,7 +293,7 @@ type CascadeInfoResult struct {
 // CampaignResult 计划结果
 type CampaignResult struct {
 	// CampaignID 计划ID
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 }
 
 // UnitWithCreativeResult 单元与创意结果
@@ -307,11 +307,11 @@ type UnitWithCreativeResult struct {
 // UnitResult 单元结果
 type UnitResult struct {
 	// UnitID 单元ID
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 }
 
 // CreativityResult 创意结果
 type CreativityResult struct {
 	// CreativityID 创意ID
-	CreativityID uint64 `json:"creativity_id,omitempty"`
+	CreativityID uint64 `json:"creativity_id"`
 }

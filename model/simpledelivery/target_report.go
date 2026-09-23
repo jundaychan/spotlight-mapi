@@ -76,7 +76,7 @@ type TargetReportDimension struct {
 	// NoteTitle 笔记标题，当细分条件选择笔记时有该字段
 	NoteTitle string `json:"note_title,omitempty"`
 	// CampaignID 计划ID，当细分条件选择计划时有该字段
-	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID model.Uint64 `json:"campaign_id"`
 }
 
 // UnmarshalJSON 必须自己实现：本结构体匿名内嵌了 report.DataReportDTO，

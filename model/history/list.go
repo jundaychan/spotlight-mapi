@@ -41,9 +41,9 @@ type ListResponse struct {
 // ListResult 历史操作记录结果
 type ListResult struct {
 	// Total 总记录数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// TotalPage 总页数
-	TotalPage int64 `json:"total_page,omitempty"`
+	TotalPage int64 `json:"total_page"`
 	// HistoryList 操作记录
 	HistoryList []OperateRecord `json:"history_list,omitempty"`
 }
@@ -51,7 +51,7 @@ type ListResult struct {
 // OperateRecord 操作记录
 type OperateRecord struct {
 	// ID 操作记录ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// OptTime 操作时间，示例：2025-01-01 00:00:00
 	OptTime string `json:"opt_time,omitempty"`
 	// OptAccountName 操作人
@@ -63,7 +63,7 @@ type OperateRecord struct {
 	// OptObject 操作对象
 	OptObject string `json:"opt_object,omitempty"`
 	// OptObjectID 操作对象ID
-	OptObjectID model.Uint64 `json:"opt_object_id,omitempty"`
+	OptObjectID model.Uint64 `json:"opt_object_id"`
 	// OptTypeName 操作内容
 	OptTypeName string `json:"opt_type_name,omitempty"`
 	// OldValue 操作前

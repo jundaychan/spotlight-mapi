@@ -72,7 +72,7 @@ type NoteResponse struct {
 // NoteReportList 笔记层级离线数据列表
 type NoteReportList struct {
 	// TotalCount 总条数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 	// List 详细数据
 	List []NoteReport `json:"data_list,omitempty"`
 	// AggregationData 汇总数据
@@ -105,151 +105,151 @@ type NoteReport struct {
 	City string `json:"city,omitempty"`
 	report.DataReportDTO
 	// MessageFstReplyTimeAvg 平均响应时长(分); 账户下单次咨询响应时长加和/总咨询次数
-	MessageFstReplyTimeAvg model.Float64 `json:"message_fst_reply_time_avg,omitempty"`
+	MessageFstReplyTimeAvg model.Float64 `json:"message_fst_reply_time_avg"`
 	// IUserNum 新增种草人群
-	IUserNum model.Int64 `json:"i_user_num,omitempty"`
+	IUserNum model.Int64 `json:"i_user_num"`
 	// TiUserNum 新增深度种草人群
-	TiUserNum model.Int64 `json:"ti_user_num,omitempty"`
+	TiUserNum model.Int64 `json:"ti_user_num"`
 	// IUserPrice 新增种草人群成本
-	IUserPrice model.Float64 `json:"i_user_price,omitempty"`
+	IUserPrice model.Float64 `json:"i_user_price"`
 	// TiUserPrice 新增深度种草人群成本
-	TiUserPrice model.Float64 `json:"ti_user_price,omitempty"`
+	TiUserPrice model.Float64 `json:"ti_user_price"`
 	// LiveAverageOrderCost 直播间支付订单成本; 推广消费/直播间支付订单量
-	LiveAverageOrderCost model.Float64 `json:"live_average_order_cost,omitempty"`
+	LiveAverageOrderCost model.Float64 `json:"live_average_order_cost"`
 	// PhoneCallCnt 电话拨打
-	PhoneCallCnt model.Int64 `json:"phone_call_cnt,omitempty"`
+	PhoneCallCnt model.Int64 `json:"phone_call_cnt"`
 	// PhoneCallSuccCnt 电话接通
-	PhoneCallSuccCnt model.Int64 `json:"phone_call_succ_cnt,omitempty"`
+	PhoneCallSuccCnt model.Int64 `json:"phone_call_succ_cnt"`
 	// WechatCopyCnt 微信复制
-	WechatCopyCnt model.Int64 `json:"wechat_copy_cnt,omitempty"`
+	WechatCopyCnt model.Int64 `json:"wechat_copy_cnt"`
 	// WechatCopySuccCnt 微信加为好友
-	WechatCopySuccCnt model.Int64 `json:"wechat_copy_succ_cnt,omitempty"`
+	WechatCopySuccCnt model.Int64 `json:"wechat_copy_succ_cnt"`
 	// IdentityCertiCnt 身份认证
-	IdentityCertiCnt model.Int64 `json:"identity_certi_cnt,omitempty"`
+	IdentityCertiCnt model.Int64 `json:"identity_certi_cnt"`
 	// CommodityBuyCnt 付费
-	CommodityBuyCnt model.Int64 `json:"commodity_buy_cnt,omitempty"`
+	CommodityBuyCnt model.Int64 `json:"commodity_buy_cnt"`
 	// ExternalGoodsVisit7 行业商品点击量
-	ExternalGoodsVisit7 model.Int64 `json:"external_goods_visit_7,omitempty"`
+	ExternalGoodsVisit7 model.Int64 `json:"external_goods_visit_7"`
 	// ExternalGoodsVisitPrice7 行业商品点击成本
-	ExternalGoodsVisitPrice7 model.Float64 `json:"external_goods_visit_price_7,omitempty"`
+	ExternalGoodsVisitPrice7 model.Float64 `json:"external_goods_visit_price_7"`
 	// ExternalGoodsVisitRate7 行业商品点击转化率
-	ExternalGoodsVisitRate7 model.Float64 `json:"external_goods_visit_rate_7,omitempty"`
+	ExternalGoodsVisitRate7 model.Float64 `json:"external_goods_visit_rate_7"`
 	// JdActiveUserNum 小红盟站外活跃行为UV
-	JdActiveUserNum model.Int64 `json:"jd_active_user_num,omitempty"`
+	JdActiveUserNum model.Int64 `json:"jd_active_user_num"`
 	// JdActiveUserNumCvrNew 小红盟站外活跃行为率
-	JdActiveUserNumCvrNew model.Float64 `json:"jd_active_user_num_cvr_new,omitempty"`
+	JdActiveUserNumCvrNew model.Float64 `json:"jd_active_user_num_cvr_new"`
 	// JdActiveUserNumCpl 小红盟站外活跃成本
-	JdActiveUserNumCpl model.Float64 `json:"jd_active_user_num_cpl,omitempty"`
+	JdActiveUserNumCpl model.Float64 `json:"jd_active_user_num_cpl"`
 	// JdTaskFee 小红盟任务期消费
-	JdTaskFee model.Float64 `json:"jd_task_fee,omitempty"`
+	JdTaskFee model.Float64 `json:"jd_task_fee"`
 	// JdTaskReadUserCnt 小红盟任务期阅读UV
-	JdTaskReadUserCnt model.Int64 `json:"jd_task_read_user_cnt,omitempty"`
+	JdTaskReadUserCnt model.Int64 `json:"jd_task_read_user_cnt"`
 	// AppDownloadButtonClickCnt APP下载按钮点击
-	AppDownloadButtonClickCnt model.Int64 `json:"app_download_button_click_cnt,omitempty"`
+	AppDownloadButtonClickCnt model.Int64 `json:"app_download_button_click_cnt"`
 	// AppDownloadButtonClickCtr APP下载按钮点击率
-	AppDownloadButtonClickCtr model.Float64 `json:"app_download_button_click_ctr,omitempty"`
+	AppDownloadButtonClickCtr model.Float64 `json:"app_download_button_click_ctr"`
 	// AppDownloadButtonClickCost APP下载按钮点击成本
-	AppDownloadButtonClickCost model.Float64 `json:"app_download_button_click_cost,omitempty"`
+	AppDownloadButtonClickCost model.Float64 `json:"app_download_button_click_cost"`
 	// AppActivateCnt 激活数
-	AppActivateCnt model.Int64 `json:"app_activate_cnt,omitempty"`
+	AppActivateCnt model.Int64 `json:"app_activate_cnt"`
 	// AppActivateCost 激活成本
-	AppActivateCost model.Float64 `json:"app_activate_cost,omitempty"`
+	AppActivateCost model.Float64 `json:"app_activate_cost"`
 	// AppActivateCtr 激活率
-	AppActivateCtr model.Float64 `json:"app_activate_ctr,omitempty"`
+	AppActivateCtr model.Float64 `json:"app_activate_ctr"`
 	// AppRegisterCnt 注册数
-	AppRegisterCnt model.Int64 `json:"app_register_cnt,omitempty"`
+	AppRegisterCnt model.Int64 `json:"app_register_cnt"`
 	// AppRegisterCost 注册成本
-	AppRegisterCost model.Float64 `json:"app_register_cost,omitempty"`
+	AppRegisterCost model.Float64 `json:"app_register_cost"`
 	// AppRegisterCtr 注册率
-	AppRegisterCtr model.Float64 `json:"app_register_ctr,omitempty"`
+	AppRegisterCtr model.Float64 `json:"app_register_ctr"`
 	// FirstAppPayCnt 首次付费数
-	FirstAppPayCnt model.Int64 `json:"first_app_pay_cnt,omitempty"`
+	FirstAppPayCnt model.Int64 `json:"first_app_pay_cnt"`
 	// FirstAppPayCost 首次付费成本
-	FirstAppPayCost model.Float64 `json:"first_app_pay_cost,omitempty"`
+	FirstAppPayCost model.Float64 `json:"first_app_pay_cost"`
 	// FirstAppPayCtr 首次付费率
-	FirstAppPayCtr model.Float64 `json:"first_app_pay_ctr,omitempty"`
+	FirstAppPayCtr model.Float64 `json:"first_app_pay_ctr"`
 	// CurrentAppPayCnt 当日付费次数
-	CurrentAppPayCnt model.Int64 `json:"current_app_pay_cnt,omitempty"`
+	CurrentAppPayCnt model.Int64 `json:"current_app_pay_cnt"`
 	// CurrentAppPayCost 当日付费成本
-	CurrentAppPayCost model.Float64 `json:"current_app_pay_cost,omitempty"`
+	CurrentAppPayCost model.Float64 `json:"current_app_pay_cost"`
 	// AppKeyActionCnt 关键行为数
-	AppKeyActionCnt model.Int64 `json:"app_key_action_cnt,omitempty"`
+	AppKeyActionCnt model.Int64 `json:"app_key_action_cnt"`
 	// AppKeyActionCost 关键行为成本
-	AppKeyActionCost model.Float64 `json:"app_key_action_cost,omitempty"`
+	AppKeyActionCost model.Float64 `json:"app_key_action_cost"`
 	// AppKeyActionCtr 关键行为率
-	AppKeyActionCtr model.Float64 `json:"app_key_action_ctr,omitempty"`
+	AppKeyActionCtr model.Float64 `json:"app_key_action_ctr"`
 	// AppPayCnt7d 7日付费次数
-	AppPayCnt7d model.Int64 `json:"app_pay_cnt_7d,omitempty"`
+	AppPayCnt7d model.Int64 `json:"app_pay_cnt_7d"`
 	// AppPayCost7d 7日付费成本
-	AppPayCost7d model.Float64 `json:"app_pay_cost_7d,omitempty"`
+	AppPayCost7d model.Float64 `json:"app_pay_cost_7d"`
 	// AppPayAmount 付费金额
-	AppPayAmount model.Float64 `json:"app_pay_amount,omitempty"`
+	AppPayAmount model.Float64 `json:"app_pay_amount"`
 	// AppPayRoi 付费ROI
-	AppPayRoi model.Float64 `json:"app_pay_roi,omitempty"`
+	AppPayRoi model.Float64 `json:"app_pay_roi"`
 	// AppActivateAmount1d 当日LTV
-	AppActivateAmount1d model.Float64 `json:"app_activate_amount_1d,omitempty"`
+	AppActivateAmount1d model.Float64 `json:"app_activate_amount_1d"`
 	// AppActivateAmount3d 三日LTV
-	AppActivateAmount3d model.Float64 `json:"app_activate_amount_3d,omitempty"`
+	AppActivateAmount3d model.Float64 `json:"app_activate_amount_3d"`
 	// AppActivateAmount7d 七日LTV
-	AppActivateAmount7d model.Float64 `json:"app_activate_amount_7d,omitempty"`
+	AppActivateAmount7d model.Float64 `json:"app_activate_amount_7d"`
 	// AppActivateAmount1dRoi 当日广告付费ROI
-	AppActivateAmount1dRoi model.Float64 `json:"app_activate_amount_1d_roi,omitempty"`
+	AppActivateAmount1dRoi model.Float64 `json:"app_activate_amount_1d_roi"`
 	// AppActivateAmount3dRoi 三日广告付费ROI
-	AppActivateAmount3dRoi model.Float64 `json:"app_activate_amount_3d_roi,omitempty"`
+	AppActivateAmount3dRoi model.Float64 `json:"app_activate_amount_3d_roi"`
 	// AppActivateAmount7dRoi 七日广告付费ROI
-	AppActivateAmount7dRoi model.Float64 `json:"app_activate_amount_7d_roi,omitempty"`
+	AppActivateAmount7dRoi model.Float64 `json:"app_activate_amount_7d_roi"`
 	// Retention1dCnt 次留
-	Retention1dCnt model.Int64 `json:"retention_1d_cnt,omitempty"`
+	Retention1dCnt model.Int64 `json:"retention_1d_cnt"`
 	// Retention3dCnt 3日留存
-	Retention3dCnt model.Int64 `json:"retention_3d_cnt,omitempty"`
+	Retention3dCnt model.Int64 `json:"retention_3d_cnt"`
 	// Retention7dCnt 7日留存
-	Retention7dCnt model.Int64 `json:"retention_7d_cnt,omitempty"`
+	Retention7dCnt model.Int64 `json:"retention_7d_cnt"`
 	// AddWechatCount 添加企微量
-	AddWechatCount model.Int64 `json:"add_wechat_count,omitempty"`
+	AddWechatCount model.Int64 `json:"add_wechat_count"`
 	// AddWechatCost 添加企微成本
-	AddWechatCost model.Float64 `json:"add_wechat_cost,omitempty"`
+	AddWechatCost model.Float64 `json:"add_wechat_cost"`
 	// AddWechatSucCount 成功添加企微量
-	AddWechatSucCount model.Int64 `json:"add_wechat_suc_count,omitempty"`
+	AddWechatSucCount model.Int64 `json:"add_wechat_suc_count"`
 	// AddWechatSucCost 成功添加企微成本
-	AddWechatSucCost model.Float64 `json:"add_wechat_suc_cost,omitempty"`
+	AddWechatSucCost model.Float64 `json:"add_wechat_suc_cost"`
 	// WechatTalkCount 企微开口量
-	WechatTalkCount model.Int64 `json:"wechat_talk_count,omitempty"`
+	WechatTalkCount model.Int64 `json:"wechat_talk_count"`
 	// WechatTalkCost 企微开口成本
-	WechatTalkCost model.Float64 `json:"wechat_talk_cost,omitempty"`
+	WechatTalkCost model.Float64 `json:"wechat_talk_cost"`
 	// ShopPoiClickNum 门店组件点击量
-	ShopPoiClickNum model.Int64 `json:"shop_poi_click_num,omitempty"`
+	ShopPoiClickNum model.Int64 `json:"shop_poi_click_num"`
 	// ShopPoiPagePv 门店页面访问量
-	ShopPoiPagePv model.Int64 `json:"shop_poi_page_pv,omitempty"`
+	ShopPoiPagePv model.Int64 `json:"shop_poi_page_pv"`
 	// ShopPoiPageVisitPrice 门店页面访问成本
-	ShopPoiPageVisitPrice model.Float64 `json:"shop_poi_page_visit_price,omitempty"`
+	ShopPoiPageVisitPrice model.Float64 `json:"shop_poi_page_visit_price"`
 	// ShopPoiPageNavigateClick 门店页面导航栏按钮点击量
-	ShopPoiPageNavigateClick model.Int64 `json:"shop_poi_page_navigate_click,omitempty"`
+	ShopPoiPageNavigateClick model.Int64 `json:"shop_poi_page_navigate_click"`
 	// WechatAppletsOpenCnt 微信打开按钮点击次数
-	WechatAppletsOpenCnt model.Int64 `json:"wechat_applets_open_cnt,omitempty"`
+	WechatAppletsOpenCnt model.Int64 `json:"wechat_applets_open_cnt"`
 	// WechatAppletsPayCnt 微信小程序付费次数
-	WechatAppletsPayCnt model.Int64 `json:"wechat_applets_pay_cnt,omitempty"`
+	WechatAppletsPayCnt model.Int64 `json:"wechat_applets_pay_cnt"`
 	// WechatAppletsActivateCnt 微信小程序激活次数
-	WechatAppletsActivateCnt model.Int64 `json:"wechat_applets_activate_cnt,omitempty"`
+	WechatAppletsActivateCnt model.Int64 `json:"wechat_applets_activate_cnt"`
 	// WechatAppletsPayAmount 微信小程序付费总金额
-	WechatAppletsPayAmount model.Float64 `json:"wechat_applets_pay_amount,omitempty"`
+	WechatAppletsPayAmount model.Float64 `json:"wechat_applets_pay_amount"`
 	// WechatAppletsPayAmount3d 微信小程序激活后三日付费总金额
-	WechatAppletsPayAmount3d model.Float64 `json:"wechat_applets_pay_amount_3d,omitempty"`
+	WechatAppletsPayAmount3d model.Float64 `json:"wechat_applets_pay_amount_3d"`
 	// WechatAppletsPayAmount7d 微信小程序激活后七日付费总金额
-	WechatAppletsPayAmount7d model.Float64 `json:"wechat_applets_pay_amount_7d,omitempty"`
+	WechatAppletsPayAmount7d model.Float64 `json:"wechat_applets_pay_amount_7d"`
 	// WechatAppletsPayCnt3d 微信小程序激活后三日付费次数
-	WechatAppletsPayCnt3d model.Int64 `json:"wechat_applets_pay_cnt_3d,omitempty"`
+	WechatAppletsPayCnt3d model.Int64 `json:"wechat_applets_pay_cnt_3d"`
 	// WechatAppletsPayCnt7d 微信小程序激活后七日付费次数
-	WechatAppletsPayCnt7d model.Int64 `json:"wechat_applets_pay_cnt_7d,omitempty"`
+	WechatAppletsPayCnt7d model.Int64 `json:"wechat_applets_pay_cnt_7d"`
 	// CurrentWechatAppletsFirstPayCnt 微信小程序当日首次付费次数
-	CurrentWechatAppletsFirstPayCnt model.Int64 `json:"currentWechatAppletsFirstPayCnt,omitempty"`
+	CurrentWechatAppletsFirstPayCnt model.Int64 `json:"currentWechatAppletsFirstPayCnt"`
 	// CurrentWechatAppletsFirstPayAmount 微信小程序当日首次付费金额
-	CurrentWechatAppletsFirstPayAmount model.Float64 `json:"currentWechatAppletsFirstPayAmount,omitempty"`
+	CurrentWechatAppletsFirstPayAmount model.Float64 `json:"currentWechatAppletsFirstPayAmount"`
 	// CurrentWechatAppletsPayCnt 微信小程序当日付费次数
-	CurrentWechatAppletsPayCnt model.Int64 `json:"currentWechatAppletsPayCnt,omitempty"`
+	CurrentWechatAppletsPayCnt model.Int64 `json:"currentWechatAppletsPayCnt"`
 	// CurrentWechatAppletsPayAmount 微信小程序当日付费总金额
-	CurrentWechatAppletsPayAmount model.Float64 `json:"currentWechatAppletsPayAmount,omitempty"`
+	CurrentWechatAppletsPayAmount model.Float64 `json:"currentWechatAppletsPayAmount"`
 	// CurrentWechatAppletsActivateCnt 微信小程序当日激活次数
-	CurrentWechatAppletsActivateCnt model.Int64 `json:"currentWechatAppletsActivateCnt,omitempty"`
+	CurrentWechatAppletsActivateCnt model.Int64 `json:"currentWechatAppletsActivateCnt"`
 }
 
 // UnmarshalJSON 必须自己实现：本结构体匿名内嵌了 report.DataReportDTO，

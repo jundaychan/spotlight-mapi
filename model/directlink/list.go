@@ -58,7 +58,7 @@ type ListResponse struct {
 
 type ListResult struct {
 	// Total 直达链接总数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// DirectLinkList 直达链接
 	DirectLinkList []DirectLink `json:"direct_link_list,omitempty"`
 }

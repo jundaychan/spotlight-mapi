@@ -69,25 +69,25 @@ type BaseKeywordDTO struct {
 	// Keyword 关键词
 	Keyword string `json:"keyword,omitempty"`
 	// CampaignGroupID 广告组ID
-	CampaignGroupID uint64 `json:"campaign_group_id,omitempty"`
+	CampaignGroupID uint64 `json:"campaign_group_id"`
 	// CampaignGroupName 标的名称
 	CampaignGroupName string `json:"campaign_group_name,omitempty"`
 	// CampaignID 计划ID
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// UnitID 单元ID
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// UnitName 单元名称
 	UnitName string `json:"unit_name,omitempty"`
 	// KeywordEnable 关键词上线状态，0-下线、1-上线
-	KeywordEnable int `json:"keyword_enable,omitempty"`
+	KeywordEnable int `json:"keyword_enable"`
 	// KeywordFilterState 关键词状态，见枚举说明
-	KeywordFilterState int `json:"keyword_filter_state,omitempty"`
+	KeywordFilterState int `json:"keyword_filter_state"`
 	// CreateTime 创建时间，格式 yyyy-MM-dd HH:mm:ss
 	CreateTime string `json:"create_time,omitempty"`
 	// PhraseMatchType 匹配类型，0-精准匹配、1-短语匹配
-	PhraseMatchType int `json:"phrase_match_type,omitempty"`
+	PhraseMatchType int `json:"phrase_match_type"`
 	// Bid 出价
-	Bid int64 `json:"bid,omitempty"`
+	Bid int64 `json:"bid"`
 }

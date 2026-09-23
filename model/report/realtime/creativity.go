@@ -74,21 +74,21 @@ type CreativityDTO struct {
 // BaseCreativityDTO 创意属性信息
 type BaseCreativityDTO struct {
 	// CreativityID 创意ID
-	CreativityID uint64 `json:"creativity_id,omitempty"`
+	CreativityID uint64 `json:"creativity_id"`
 	// CreativityName 创意名称
 	CreativityName string `json:"creativity_name,omitempty"`
 	// CreativityFilterState 创意状态8：有效，3：暂停，9: 商品状态异常，4：已被单元暂停，10：单元未开始，11：单元已结束，12：单元处于暂停时段，5：已被计划暂停，13：计划预算不足，16：账户日预算不足，14：现金余额不足，1：已删除
-	CreativityFilterState int `json:"creativity_filter_state,omitempty"`
+	CreativityFilterState int `json:"creativity_filter_state"`
 	// CreativityCreateTime 创意创建时间：格式 yyyy-MM-dd HH:mm:ss
 	CreativityCreateTime string `json:"creativity_create_time,omitempty"`
 	// CreativityEnable 创意启停状态：0：暂停，1：开启
-	CreativeEnable int `json:"creative_enable,omitempty"`
+	CreativeEnable int `json:"creative_enable"`
 	// AuditStatus 审核状态1：审核拒绝，2：审核中，3：审核通过，4：审核通过（私密)
-	AuditStatus int `json:"audit_status,omitempty"`
+	AuditStatus int `json:"audit_status"`
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// Programmatic 创意组合类型：0：自定义创意，1：程序化创意
-	Programmatic int `json:"programmatic,omitempty"`
+	Programmatic int `json:"programmatic"`
 	// NoteID 笔记id
 	NoteID string `json:"note_id,omitempty"`
 	// CreativityType 创意类型：
@@ -107,5 +107,5 @@ type BaseCreativityDTO struct {
 	// 12：搜索组件
 	// 13：小程序组件
 	// 14：留资组件
-	CreativityType int `json:"creativity_type,omitempty"`
+	CreativityType int `json:"creativity_type"`
 }

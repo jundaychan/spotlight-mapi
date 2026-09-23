@@ -60,9 +60,9 @@ type GetCommentsResponse struct {
 // CommentPageResultDTO 分页信息
 type CommentPageResultDTO struct {
 	// PageIndex 当前页码
-	PageIndex int `json:"pageIndex,omitempty"`
+	PageIndex int `json:"pageIndex"`
 	// TotalCount 评论总数 (不含作者回复)
-	TotalCount int `json:"totalCount,omitempty"`
+	TotalCount int `json:"totalCount"`
 }
 
 // GetCommentsResult 返回数据
@@ -70,9 +70,9 @@ type GetCommentsResult struct {
 	// MaterialNoteCommentListDtos 评论列表
 	MaterialNoteCommentListDtos []MaterialNoteComment `json:"materialNoteCommentListDtos,omitempty"`
 	// CommentTotal 评论总数 (含作者回复)
-	CommentTotal int64 `json:"commentTotal,omitempty"`
+	CommentTotal int64 `json:"commentTotal"`
 	// ReplyRate 回复率
-	ReplyRate float64 `json:"replyRate,omitempty"`
+	ReplyRate float64 `json:"replyRate"`
 	// PageResultDTO 分页信息
 	PageResultDTO *CommentPageResultDTO `json:"pageResultDTO,omitempty"`
 }
@@ -90,15 +90,15 @@ type MaterialNoteComment struct {
 	// AtUsers 评论中@的用户列表
 	AtUsers []string `json:"atUsers,omitempty"`
 	// CreateTime 评论创建时间戳（毫秒）
-	CreateTime int64 `json:"createTime,omitempty"`
+	CreateTime int64 `json:"createTime"`
 	// CommentLevel 评论层级 1:一级评论 2:二级评论（回复）
-	CommentLevel int `json:"commentLevel,omitempty"`
+	CommentLevel int `json:"commentLevel"`
 	// AuthorLiked 笔记作者是否点赞
-	AuthorLiked bool `json:"authorLiked,omitempty"`
+	AuthorLiked bool `json:"authorLiked"`
 	// LikeInfoCount 点赞数
-	LikeInfoCount int `json:"likeInfoCount,omitempty"`
+	LikeInfoCount int `json:"likeInfoCount"`
 	// ReplyStatus 被回复状态 1:未被回复 2:已被回复
-	ReplyStatus int `json:"replyStatus,omitempty"`
+	ReplyStatus int `json:"replyStatus"`
 	// PictureInfoDto 评论图片内容
 	PictureInfoDto []CommentPictureInfo `json:"pictureInfoDto,omitempty"`
 	// UserInfoDto 评论者信息
@@ -114,9 +114,9 @@ type CommentPictureInfo struct {
 	// URL 图片链接
 	URL string `json:"url,omitempty"`
 	// Height 高度
-	Height int `json:"height,omitempty"`
+	Height int `json:"height"`
 	// Width 宽度
-	Width int `json:"width,omitempty"`
+	Width int `json:"width"`
 }
 
 // CommentUserInfo 评论者信息
@@ -138,9 +138,9 @@ type CommentNoteInfo struct {
 	// Image 封面链接
 	Image string `json:"image,omitempty"`
 	// Type 类型
-	Type int `json:"type,omitempty"`
+	Type int `json:"type"`
 	// CreateTime 创建时间
-	CreateTime int64 `json:"createTime,omitempty"`
+	CreateTime int64 `json:"createTime"`
 	// Content 内容
 	Content string `json:"content,omitempty"`
 }

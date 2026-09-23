@@ -36,11 +36,11 @@ type ListResult struct {
 	// List 落地页信息
 	List []LandingPage `json:"list,omitempty"`
 	// Page 当前页
-	Page int64 `json:"page,omitempty"`
+	Page int64 `json:"page"`
 	// PageSize 每页行数
-	PageSize int64 `json:"page_size,omitempty"`
+	PageSize int64 `json:"page_size"`
 	// Total 总数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 }
 
 // LandingPage 落地页
@@ -66,10 +66,10 @@ type LandingPage struct {
 	// UnitLandingPageDesc 表单落地页描述
 	UnitLandingPageDesc []string `json:"unit_landing_page_desc,omitempty"`
 	// ID 页面ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// Status 落地页状态
 	// 未审核/草稿 DRAFT(0), 审核中 IN_AUDIT(1), 审核通过 PASS(2), 审核未通过 REJECT(3), 已过期 EXPIRED(4);
-	Status enum.LandingPageStatus `json:"status,omitempty"`
+	Status enum.LandingPageStatus `json:"status"`
 	// DataUpdated 数据是否已更新
-	DataUpdated bool `json:"data_updated,omitempty"`
+	DataUpdated bool `json:"data_updated"`
 }

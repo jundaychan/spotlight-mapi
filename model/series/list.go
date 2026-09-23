@@ -42,9 +42,9 @@ type ListResult struct {
 // Episode 剧集对象
 type Episode struct {
 	// ID 剧集ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// Type 剧集形态（1=小说 2=短剧 3=漫剧）
-	Type EpisodeType `json:"type,omitempty"`
+	Type EpisodeType `json:"type"`
 	// CategoryID 所属类目ID
 	CategoryID string `json:"category_id,omitempty"`
 	// AttributeID 属性ID
@@ -58,33 +58,33 @@ type Episode struct {
 	// CopyrightOwner 版权方
 	CopyrightOwner string `json:"copyright_owner,omitempty"`
 	// WordRange 全篇字数范围（仅type=1小说时必填）
-	WordRange int `json:"word_range,omitempty"`
+	WordRange int `json:"word_range"`
 	// GenderType 男女频（1=男 2=女 3=其他）
-	GenderType GenderType `json:"gender_type,omitempty"`
+	GenderType GenderType `json:"gender_type"`
 	// AuthorName 书籍作者（仅type=1小说时必填）
 	AuthorName string `json:"author_name,omitempty"`
 	// EpisodeCount 总章节/集数
-	EpisodeCount int `json:"episode_count,omitempty"`
+	EpisodeCount int `json:"episode_count"`
 	// EpisodeDuration 单集时长/分钟（仅type=2短剧时必填）
-	EpisodeDuration int `json:"episode_duration,omitempty"`
+	EpisodeDuration int `json:"episode_duration"`
 	// MonetizationType 变现模式（1=付费 2=混合 3=免费）
-	MonetizationType MonetizationType `json:"monetization_type,omitempty"`
+	MonetizationType MonetizationType `json:"monetization_type"`
 	// HasNetworkContent 含网赚内容（0=否 1=是）
-	HasNetworkContent int `json:"has_network_content,omitempty"`
+	HasNetworkContent int `json:"has_network_content"`
 	// AdUnlockStart 起始广告解锁集数
-	AdUnlockStart int `json:"ad_unlock_start,omitempty"`
+	AdUnlockStart int `json:"ad_unlock_start"`
 	// PayUnlockStart 起始付费解锁集数
-	PayUnlockStart int `json:"pay_unlock_start,omitempty"`
+	PayUnlockStart int `json:"pay_unlock_start"`
 	// UnitPrice 单集/章节价格（元）
-	UnitPrice int64 `json:"unit_price,omitempty"`
+	UnitPrice int64 `json:"unit_price"`
 	// MemberType 会员类型
-	MemberType MemberType `json:"member_type,omitempty"`
+	MemberType MemberType `json:"member_type"`
 	// MaxRecharge 单次最高充值档位（分）
-	MaxRecharge int64 `json:"max_recharge,omitempty"`
+	MaxRecharge int64 `json:"max_recharge"`
 	// MinRecharge 单次最低充值档位（分）
-	MinRecharge int64 `json:"min_recharge,omitempty"`
+	MinRecharge int64 `json:"min_recharge"`
 	// RecommendRecharge 推荐充值档位（分）
-	RecommendRecharge int64 `json:"recommend_recharge,omitempty"`
+	RecommendRecharge int64 `json:"recommend_recharge"`
 	// Icon 剧集icon图片URL
 	Icon string `json:"icon,omitempty"`
 	// PrimaryTitle 投放按钮主标题文案
@@ -102,7 +102,7 @@ type Episode struct {
 	// DetectURLMp 小程序推广监测链接
 	DetectURLMp string `json:"detect_url_mp,omitempty"`
 	// AuditStatus 审核状态
-	AuditStatus int `json:"audit_status,omitempty"`
+	AuditStatus int `json:"audit_status"`
 	// AuditComment 审核备注（如审核失败原因）
 	AuditComment string `json:"audit_comment,omitempty"`
 }

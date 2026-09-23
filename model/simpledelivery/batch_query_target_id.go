@@ -36,7 +36,7 @@ type ExtraDTO struct {
 	// UbeViewID 标的ID
 	UbeViewID string `json:"ube_view_id,omitempty"`
 	// GroupType 标的类型，1-全自动托管、2-半自动托管
-	GroupType int `json:"group_type,omitempty"`
+	GroupType int `json:"group_type"`
 	// CampaignGroupID 广告组ID
-	CampaignGroupID model.Uint64 `json:"campaign_group_id,omitempty"`
+	CampaignGroupID model.Uint64 `json:"campaign_group_id"`
 }

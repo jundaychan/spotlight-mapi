@@ -36,5 +36,5 @@ type TaxonomyAttribute struct {
 	// TaxonomyAttributeName 行业类目名称
 	TaxonomyAttributeName string `json:"taxonomy_attribute_name,omitempty"`
 	// TaxonomyLevel 层级
-	TaxonomyLevel int `json:"taxonomy_level,omitempty"`
+	TaxonomyLevel int `json:"taxonomy_level"`
 }

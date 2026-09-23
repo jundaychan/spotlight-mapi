@@ -93,9 +93,9 @@ type AccountFlowResponse struct {
 // AccountFlowResult 账户流水数据
 type AccountFlowResult struct {
 	// TotalCount 总记录数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 	// AggregateOrder 消费全部金额总计，单位：分
-	AggregateOrder int64 `json:"aggregate_order,omitempty"`
+	AggregateOrder int64 `json:"aggregate_order"`
 	// AccountTradeDetail 账户流水详情
 	AccountTradeDetail []AccountTradeDetail `json:"account_trade_detail,omitempty"`
 }
@@ -105,21 +105,21 @@ type AccountTradeDetail struct {
 	// LaunchDate 消费时间
 	LaunchDate string `json:"launch_date,omitempty"`
 	// OperateType 消费类型
-	OperateType AccountOperateType `json:"operate_type,omitempty"`
+	OperateType AccountOperateType `json:"operate_type"`
 	// TradeTime 操作时间
 	TradeTime string `json:"trade_time,omitempty"`
 	// AccountName 账户名称
 	AccountName string `json:"account_name,omitempty"`
 	// OrderAmount 消费金额，单位：分
-	OrderAmount int64 `json:"order_amount,omitempty"`
+	OrderAmount int64 `json:"order_amount"`
 	// Balance 余额，单位：分
-	Balance int64 `json:"balance,omitempty"`
+	Balance int64 `json:"balance"`
 	// TransferObject 款项对象
 	TransferObject string `json:"transfer_object,omitempty"`
 	// Remark 备注
 	Remark string `json:"remark,omitempty"`
 	// AccountType 资金类型
-	AccountType AccountFundType `json:"account_type,omitempty"`
+	AccountType AccountFundType `json:"account_type"`
 	// AccountTypeName 资金类型名称
 	AccountTypeName string `json:"account_type_name,omitempty"`
 	// BusinessTypeName 业务类型名称

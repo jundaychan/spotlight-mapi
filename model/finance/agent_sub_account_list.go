@@ -35,7 +35,7 @@ type AgentSubAccountListResponse struct {
 // AgentSubAccountListResult 代理商子账号列表数据
 type AgentSubAccountListResult struct {
 	// Total 总记录数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// SubAccounts 子账号列表
 	SubAccounts []AgentSubAccount `json:"sub_accounts,omitempty"`
 }
@@ -59,7 +59,7 @@ type AgentSubAccount struct {
 	// CompanyName 广告主主体名称，K身份不返回本字段
 	CompanyName string `json:"company_name,omitempty"`
 	// AdvertiserID 投放账号ID
-	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
+	AdvertiserID uint64 `json:"advertiser_id"`
 	// CreateTime 子账户创建时间，时间戳（ms）
-	CreateTime int64 `json:"create_time,omitempty"`
+	CreateTime int64 `json:"create_time"`
 }

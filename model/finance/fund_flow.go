@@ -73,7 +73,7 @@ type FundFlowResponse struct {
 // FundFlowResult 资金流水查询数据
 type FundFlowResult struct {
 	// Total 总条数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// TotalIncomeAmount 总收入金额，单位元，保留两位小数
 	TotalIncomeAmount string `json:"total_income_amount,omitempty"`
 	// TotalOutcomeAmount 总支出金额，单位元，保留两位小数
@@ -99,7 +99,7 @@ type WalletTradeAgg struct {
 // TradeAmountAgg 资金类型聚合数据
 type TradeAmountAgg struct {
 	// WalletType 资金类型
-	WalletType WalletType `json:"wallet_type,omitempty"`
+	WalletType WalletType `json:"wallet_type"`
 	// IncomeTotalAmount 总收入金额，单位元，保留两位小数
 	IncomeTotalAmount string `json:"income_total_amount,omitempty"`
 	// OutcomeTotalAmount 总支出金额，单位元，保留两位小数
@@ -111,9 +111,9 @@ type FundFlowRecord struct {
 	// TradeNo 交易流水号
 	TradeNo string `json:"trade_no,omitempty"`
 	// TradeTime 交易时间，毫秒时间戳
-	TradeTime int64 `json:"trade_time,omitempty"`
+	TradeTime int64 `json:"trade_time"`
 	// BusinessTradeTime 业务时间，毫秒时间戳
-	BusinessTradeTime int64 `json:"business_trade_time,omitempty"`
+	BusinessTradeTime int64 `json:"business_trade_time"`
 	// BusinessTradeNo 业务交易单号
 	BusinessTradeNo string `json:"business_trade_no,omitempty"`
 	// BusinessNo 外部业务单号
@@ -121,7 +121,7 @@ type FundFlowRecord struct {
 	// VirtualSellerID 子账号ID/代理商vsellerId
 	VirtualSellerID string `json:"virtual_seller_id,omitempty"`
 	// WalletType 资金类型
-	WalletType WalletType `json:"wallet_type,omitempty"`
+	WalletType WalletType `json:"wallet_type"`
 	// ParentVirtualSellerID 子账号对应的代理商vsellerId
 	ParentVirtualSellerID string `json:"parent_virtual_seller_id,omitempty"`
 	// TargetVirtualSellerID 转账对手方vsellerId
@@ -131,7 +131,7 @@ type FundFlowRecord struct {
 	// TargetAccountName 转账对手方账户名称
 	TargetAccountName string `json:"target_account_name,omitempty"`
 	// Direction 动帐方向：1收入，-1支出
-	Direction model.Int `json:"direction,omitempty"`
+	Direction model.Int `json:"direction"`
 	// TradeType 交易类型枚举名称
 	TradeType string `json:"trade_type,omitempty"`
 	// Amount 交易金额，单位元，保留两位小数

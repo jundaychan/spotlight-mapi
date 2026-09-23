@@ -148,5 +148,5 @@ type CreateResult struct {
 // EpisodeID 剧集ID
 type EpisodeID struct {
 	// ID 剧集ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 }

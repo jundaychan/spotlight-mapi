@@ -54,11 +54,11 @@ type DetailData struct {
 // Page 分页信息
 type Page struct {
 	// PageIndex 当前页码
-	PageIndex int64 `json:"page_index,omitempty"`
+	PageIndex int64 `json:"page_index"`
 	// TotalCount 数据总条数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 	// PageSize 每页条数
-	PageSize int64 `json:"page_size,omitempty"`
+	PageSize int64 `json:"page_size"`
 	// TotalPage 总页数
-	TotalPage int64 `json:"total_page,omitempty"`
+	TotalPage int64 `json:"total_page"`
 }

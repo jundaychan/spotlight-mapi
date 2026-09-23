@@ -40,17 +40,17 @@ type EventAsset struct {
 	// EventList 资产对应的事件列表
 	EventList []Event `json:"event_list,omitempty"`
 	// EventAssetID 资产id
-	EventAssetID uint64 `json:"event_asset_id,omitempty"`
+	EventAssetID uint64 `json:"event_asset_id"`
 	// Status 状态
-	Status int `json:"status,omitempty"`
+	Status int `json:"status"`
 }
 
 // Event 资产事件
 type Event struct {
 	// EventID 资产事件id
-	EventID uint64 `json:"event_id,omitempty"`
+	EventID uint64 `json:"event_id"`
 	// EventType 资产事件
-	EventType enum.EventType `json:"event_type,omitempty"`
+	EventType enum.EventType `json:"event_type"`
 	// EventStatus 状态
-	EventStatus int `json:"event_status,omitempty"`
+	EventStatus int `json:"event_status"`
 }

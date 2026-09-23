@@ -43,21 +43,21 @@ type ListResult struct {
 // TargetTemplate 定向包
 type TargetTemplate struct {
 	// ID 定向包ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 	// Name 定向包名称
 	Name string `json:"name,omitempty"`
 	// Desc 定向包描述
 	Desc string `json:"desc,omitempty"`
 	// TargetType 定向类型 1-通投 2-智能定向 3-高级定向
-	TargetType TargetTemplateType `json:"target_type,omitempty"`
+	TargetType TargetTemplateType `json:"target_type"`
 	// MarketingTarget 营销诉求
-	MarketingTarget MarketingTarget `json:"marketing_target,omitempty"`
+	MarketingTarget MarketingTarget `json:"marketing_target"`
 	// Placement 广告类型
-	Placement Placement `json:"placement,omitempty"`
+	Placement Placement `json:"placement"`
 	// DeliveryMode 投放模式 0-手动投放 1-自动投放
-	DeliveryMode DeliveryMode `json:"delivery_mode,omitempty"`
+	DeliveryMode DeliveryMode `json:"delivery_mode"`
 	// State 状态
-	State int `json:"state,omitempty"`
+	State int `json:"state"`
 	// UnitList 已关联该定向包的单元ID列表
 	UnitList []uint64 `json:"unit_list,omitempty"`
 	// TargetConfig 定向配置

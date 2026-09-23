@@ -37,7 +37,7 @@ type AgentBalanceResponse struct {
 // AgentBalanceResult 代理商主子账号余额数据
 type AgentBalanceResult struct {
 	// Total 总条数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// WalletBalanceList 分账户余额信息
 	WalletBalanceList []WalletBalance `json:"wallet_balance_list,omitempty"`
 }
@@ -55,7 +55,7 @@ type WalletBalance struct {
 	// BalanceList 分资金类型的余额明细
 	BalanceList []WalletTypeBalance `json:"balance_list,omitempty"`
 	// AccountStatus 钱包账户状态，正常：OPEN=1，冻结：FROZEN=2
-	AccountStatus WalletAccountStatus `json:"account_status,omitempty"`
+	AccountStatus WalletAccountStatus `json:"account_status"`
 }
 
 // WalletTypeBalance 分资金类型的余额明细
@@ -63,7 +63,7 @@ type WalletTypeBalance struct {
 	// VirtualSellerID 子账号ID/代理商vsellerId
 	VirtualSellerID string `json:"virtual_seller_id,omitempty"`
 	// WalletType 资金类型 0现金 1授信 2返货 3券 4赔付返货
-	WalletType WalletType `json:"wallet_type,omitempty"`
+	WalletType WalletType `json:"wallet_type"`
 	// AvailableBalance 可用余额，单位元，保留两位小数
 	AvailableBalance string `json:"available_balance,omitempty"`
 	// FrozenBalance 冻结余额，单位元，保留两位小数

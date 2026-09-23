@@ -11,11 +11,11 @@ type AccessToken struct {
 	// AccessToken 用于验证权限的 token
 	AccessToken string `json:"access_token,omitempty"`
 	// AccessTokenExpiresIn access_token 剩余有效时间，单位：秒
-	AccessTokenExpiresIn int64 `json:"access_token_expires_in,omitempty"`
+	AccessTokenExpiresIn int64 `json:"access_token_expires_in"`
 	// RefreshToken 用于获取新的 access_token 和 refresh_token，并且刷新过期时间
 	RefreshToken string `json:"refresh_token,omitempty"`
 	// RefreshTokenExpiresIn refresh_token 剩余有效时间，单位：秒
-	RefreshTokenExpiresIn int64 `json:"refresh_token_expires_in,omitempty"`
+	RefreshTokenExpiresIn int64 `json:"refresh_token_expires_in"`
 	// UserID 授权账号的user_id
 	UserID string `json:"user_id,omitempty"`
 	// VirtualSellerID 授权账号的虚拟商家ID
@@ -23,17 +23,17 @@ type AccessToken struct {
 	// CorporationName 授权方公司名称
 	CorporationName string `json:"corporation_name,omitempty"`
 	// AppID 应用ID
-	AppID uint64 `json:"app_id,omitempty"`
+	AppID uint64 `json:"app_id"`
 	// CreateTime 授权创建时间(ms)
-	CreateTime int64 `json:"create_time,omitempty"`
+	CreateTime int64 `json:"create_time"`
 	// UpdateTime 授权更新时间(ms)
-	UpdateTime int64 `json:"update_time,omitempty"`
+	UpdateTime int64 `json:"update_time"`
 	// ApprovalRoleType 授权账号类型，4：品牌，601：代理商
-	ApprovalRoleType enum.ApprovalRoleType `json:"approval_role_type,omitempty"`
+	ApprovalRoleType enum.ApprovalRoleType `json:"approval_role_type"`
 	// RoleType 应用角色类型，1：品牌开发者，2：代理商开发者，3：服务商开发者
-	RoleType enum.DeveloperRoleType `json:"role_type,omitempty"`
+	RoleType enum.DeveloperRoleType `json:"role_type"`
 	// PlatformType 平台类型，1：聚光，2：蒲公英
-	PlatformType enum.PlatformType `json:"platform_type,omitempty"`
+	PlatformType enum.PlatformType `json:"platform_type"`
 	// ApprovalAdvertisers 授权广告主账号，品牌开发者与服务商开发者时有值
 	ApprovalAdvertisers []Advertiser `json:"approval_advertisers,omitempty"`
 }

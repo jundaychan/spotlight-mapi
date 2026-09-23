@@ -34,9 +34,9 @@ type IndustryItemListResponse struct {
 // IndustryItemListResult 行业商品明细信息
 type IndustryItemListResult struct {
 	// PageIndex 页码
-	PageIndex int `json:"page_index,omitempty"`
+	PageIndex int `json:"page_index"`
 	// TotalCount 总数
-	TotalCount int `json:"total_count,omitempty"`
+	TotalCount int `json:"total_count"`
 	// IndustryItemDtos 商品明细信息列表
 	IndustryItemDtos []IndustryItem `json:"industry_item_dtos,omitempty"`
 }
@@ -50,11 +50,11 @@ type IndustryItem struct {
 	// ImageURL 商品主图
 	ImageURL string `json:"image_url,omitempty"`
 	// Platform 平台：1淘宝；2京东；3拼多多；6：淘宝ud；7京东ud
-	Platform int `json:"platform,omitempty"`
+	Platform int `json:"platform"`
 	// OuterItemID 站外商品id
 	OuterItemID string `json:"outer_item_id,omitempty"`
 	// JumpURLType 跳转链接:1直达链接 2一跳落地页 3二跳落地页
-	JumpURLType int `json:"jump_url_type,omitempty"`
+	JumpURLType int `json:"jump_url_type"`
 	// JumpURL jump_url_type是1时表示deeplink 一跳落地页的话是跳转链接
 	JumpURL string `json:"jump_url,omitempty"`
 	// H5Link 兜底h5链接

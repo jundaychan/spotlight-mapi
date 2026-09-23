@@ -53,7 +53,7 @@ type RealtimeList struct {
 	CampaignDTOs   []RealtimeEntityDTO   `json:"campaign_dtos,omitempty"`
 	CreativityDTOs []RealtimeEntityDTO   `json:"creativity_dtos,omitempty"`
 	TotalData      *report.DataReportDTO `json:"total_data,omitempty"`
-	TotalCount     int64                 `json:"total_count,omitempty"`
+	TotalCount     int64                 `json:"total_count"`
 }
 
 // Entities 返回非空的实体列表(优先 creativity，其次 campaign)。
@@ -90,8 +90,8 @@ func (d *RealtimeEntityDTO) Base() *RealtimeBaseDTO {
 
 // RealtimeBaseDTO 实体属性(只取报表缓存需要的 id/name；宽松解析数字/字符串)。
 type RealtimeBaseDTO struct {
-	CampaignID     model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID     model.Uint64 `json:"campaign_id"`
 	CampaignName   string       `json:"campaign_name,omitempty"`
-	CreativityID   model.Uint64 `json:"creativity_id,omitempty"`
+	CreativityID   model.Uint64 `json:"creativity_id"`
 	CreativityName string       `json:"creativity_name,omitempty"`
 }

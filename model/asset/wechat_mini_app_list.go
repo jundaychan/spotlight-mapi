@@ -34,9 +34,9 @@ type WechatMiniAppListResponse struct {
 // WechatMiniAppListResult 小程序明细信息
 type WechatMiniAppListResult struct {
 	// PageIndex 页码
-	PageIndex int `json:"page_index,omitempty"`
+	PageIndex int `json:"page_index"`
 	// TotalCount 总数
-	TotalCount int `json:"total_count,omitempty"`
+	TotalCount int `json:"total_count"`
 	// IndustryItemDtos 小程序明细信息列表
 	IndustryItemDtos []WechatMiniAppItem `json:"industry_item_dtos,omitempty"`
 }

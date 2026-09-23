@@ -39,5 +39,5 @@ type CreateResponse struct {
 // CreateResult 创建定向包结果
 type CreateResult struct {
 	// TargetTemplateID 定向包id
-	TargetTemplateID uint64 `json:"target_template_id,omitempty"`
+	TargetTemplateID uint64 `json:"target_template_id"`
 }

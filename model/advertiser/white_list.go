@@ -25,5 +25,5 @@ type WhiteListResponse struct {
 // WhiteList 账户白名单
 type WhiteList struct {
 	// InNoteForceBindSpuWhiteList 是否在笔记强绑spu白名单
-	InNoteForceBindSpuWhiteList bool `json:"in_note_force_bind_spu_white_list,omitempty"`
+	InNoteForceBindSpuWhiteList bool `json:"in_note_force_bind_spu_white_list"`
 }

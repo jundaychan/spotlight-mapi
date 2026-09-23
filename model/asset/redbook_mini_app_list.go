@@ -54,7 +54,7 @@ type RedbookMiniAppListResponse struct {
 // RedbookMiniAppListResult 小程序明细信息
 type RedbookMiniAppListResult struct {
 	// Total 总数
-	Total int32 `json:"total,omitempty"`
+	Total int32 `json:"total"`
 	// MiniProgramInfoList 小程序明细信息列表
 	MiniProgramInfoList []RedbookMiniAppInfo `json:"mini_program_info_list,omitempty"`
 }

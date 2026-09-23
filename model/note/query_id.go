@@ -29,5 +29,5 @@ type QueryIDResult struct {
 	// NoteID 笔记ID
 	NoteID string `json:"note_id,omitempty"`
 	// CreateTime 创建时间
-	CreateTime int64 `json:"create_time,omitempty"`
+	CreateTime int64 `json:"create_time"`
 }

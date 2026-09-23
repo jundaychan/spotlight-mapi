@@ -65,17 +65,17 @@ type BaseNoteDTO struct {
 	// NoteID 笔记ID
 	NoteID string `json:"note_id,omitempty"`
 	// CreativityID 创意ID
-	CreativityID uint64 `json:"creativity_id,omitempty"`
+	CreativityID uint64 `json:"creativity_id"`
 	// CreativityName 创意名称
 	CreativityName string `json:"creativity_name,omitempty"`
 	// CreativityEnable 创意上线状态，0-下线、1-上线
-	CreativityEnable int `json:"creativity_enable,omitempty"`
+	CreativityEnable int `json:"creativity_enable"`
 	// CreativityFilterState 创意状态，见枚举说明
-	CreativityFilterState int `json:"creativity_filter_state,omitempty"`
+	CreativityFilterState int `json:"creativity_filter_state"`
 	// CreativityCreateTime 创建时间，格式 yyyy-MM-dd HH:mm:ss
 	CreativityCreateTime string `json:"creativity_create_time,omitempty"`
 	// CreativityAuditState 审核状态，1-审核拒绝、2-审核中、3-审核通过、4-审核通过（私密）、99-不满足审核条件
-	CreativityAuditState int `json:"creativity_audit_state,omitempty"`
+	CreativityAuditState int `json:"creativity_audit_state"`
 	// AuditComment 拒审理由
 	AuditComment map[int]string `json:"audit_comment,omitempty"`
 }

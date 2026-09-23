@@ -53,7 +53,7 @@ type ProductQualInfo struct {
 	// ProductName 产品资质名称
 	ProductName string `json:"product_name,omitempty"`
 	// ProductQualID 产品资质id
-	ProductQualID int `json:"product_qual_id,omitempty"`
+	ProductQualID int `json:"product_qual_id"`
 }
 
 // BrandQualInfo 产品资质信息
@@ -63,5 +63,5 @@ type BrandQualInfo struct {
 	// UserRemark 备注
 	UserRemark string `json:"user_remark,omitempty"`
 	// BrandQualID 品牌资质id
-	BrandQualID int `json:"brand_qual_id,omitempty"`
+	BrandQualID int `json:"brand_qual_id"`
 }

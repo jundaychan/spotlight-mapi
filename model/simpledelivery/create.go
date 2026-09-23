@@ -190,7 +190,7 @@ type CreateResponse struct {
 // UbeSemiCreateAdResponse 新建简单投返回信息
 type UbeSemiCreateAdResponse struct {
 	// CampaignGroupID 广告组ID
-	CampaignGroupID uint64 `json:"campaign_group_id,omitempty"`
+	CampaignGroupID uint64 `json:"campaign_group_id"`
 	// CampaignID 计划ID
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 }

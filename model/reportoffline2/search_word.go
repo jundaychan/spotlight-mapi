@@ -70,31 +70,31 @@ type SearchWordReport struct {
 	// SearchWord 搜索词
 	SearchWord string `json:"search_word,omitempty"`
 	// CampaignID 计划id
-	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID model.Uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// UnitID 单元id
-	UnitID model.Uint64 `json:"unit_id,omitempty"`
+	UnitID model.Uint64 `json:"unit_id"`
 	// UnitName 单元名称
 	UnitName string `json:"unit_name,omitempty"`
 	// CreativityID 创意id
-	CreativityID model.Uint64 `json:"creativity_id,omitempty"`
+	CreativityID model.Uint64 `json:"creativity_id"`
 	// NoteID 笔记id
 	NoteID string `json:"note_id,omitempty"`
 	// Time 时间
 	Time string `json:"time,omitempty"`
 	// Placement 广告类型
-	Placement model.Int `json:"placement,omitempty"`
+	Placement model.Int `json:"placement"`
 	// OptimizeTarget 优化目标
-	OptimizeTarget model.Int `json:"optimize_target,omitempty"`
+	OptimizeTarget model.Int `json:"optimize_target"`
 	// PromotionTarget 推广标的
-	PromotionTarget model.Int `json:"promotion_target,omitempty"`
+	PromotionTarget model.Int `json:"promotion_target"`
 	// BiddingStrategy 出价方式
-	BiddingStrategy model.Int `json:"bidding_strategy,omitempty"`
+	BiddingStrategy model.Int `json:"bidding_strategy"`
 	// BuildType 搭建类型
-	BuildType model.Int `json:"build_type,omitempty"`
+	BuildType model.Int `json:"build_type"`
 	// MarketingTarget 营销诉求
-	MarketingTarget model.Int `json:"marketing_target,omitempty"`
+	MarketingTarget model.Int `json:"marketing_target"`
 	report.DataReportDTO
 }
 

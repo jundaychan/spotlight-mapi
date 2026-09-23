@@ -74,15 +74,15 @@ type UnitDTO struct {
 // BaseUnitDTO 单元属性信息
 type BaseUnitDTO struct {
 	// UnitID 单元id
-	UnitID uint64 `json:"unit_id,omitempty"`
+	UnitID uint64 `json:"unit_id"`
 	// UnitName 单元名称
 	UnitName string `json:"unit_name,omitempty"`
 	// UnitCreateTime 单元创建时间：格式 yyyy-MM-dd HH:mm:ss
 	UnitCreateTime string `json:"unit_create_time,omitempty"`
 	// UnitEnable 单元启停状态：0：暂停，1：开启
-	UnitEnable int `json:"unit_enable,omitempty"`
+	UnitEnable int `json:"unit_enable"`
 	// CampaignID 计划id
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// EventBid 出价
-	EventBid int64 `json:"event_bid,omitempty"`
+	EventBid int64 `json:"event_bid"`
 }

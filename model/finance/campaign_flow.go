@@ -33,9 +33,9 @@ type CampaignFlowResponse struct {
 // CampaignFlowResult 计划流水数据
 type CampaignFlowResult struct {
 	// Total 总记录数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 	// Spend 消费返货金额总计，单位：分
-	Spend int64 `json:"spend,omitempty"`
+	Spend int64 `json:"spend"`
 	// AdCampaignTradeDetail 计划流水详情
 	AdCampaignTradeDetail []CampaignTradeDetail `json:"ad_campaign_trade_detail,omitempty"`
 }
@@ -43,7 +43,7 @@ type CampaignFlowResult struct {
 // CampaignTradeDetail 计划流水详情
 type CampaignTradeDetail struct {
 	// CampaignID 计划ID
-	CampaignID uint64 `json:"campaign_id,omitempty"`
+	CampaignID uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// LaunchDate 投放时间
@@ -51,7 +51,7 @@ type CampaignTradeDetail struct {
 	// PayTime 操作时间
 	PayTime string `json:"pay_time,omitempty"`
 	// CampaignDayBudget 日预算，单位：分
-	CampaignDayBudget int64 `json:"campaign_day_budget,omitempty"`
+	CampaignDayBudget int64 `json:"campaign_day_budget"`
 	// OrderAmount 消耗金额，单位：分
-	OrderAmount int64 `json:"order_amount,omitempty"`
+	OrderAmount int64 `json:"order_amount"`
 }

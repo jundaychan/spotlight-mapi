@@ -35,11 +35,11 @@ type ListResult struct {
 	// List 笔记信息
 	List []Spu `json:"spu,omitempty"`
 	// Page 当前页
-	Page int64 `json:"page,omitempty"`
+	Page int64 `json:"page"`
 	// PageSize 每页行数
-	PageSize int64 `json:"page_size,omitempty"`
+	PageSize int64 `json:"page_size"`
 	// Total 总数
-	Total int64 `json:"total,omitempty"`
+	Total int64 `json:"total"`
 }
 
 // Spu 笔记信息
@@ -59,9 +59,9 @@ type Spu struct {
 	// PicURLList spu图片链接列表
 	PicURLList []string `json:"pic_url_list,omitempty"`
 	// MainSpuID
-	MainSpuID uint64 `json:"main_spu_id,omitempty"`
+	MainSpuID uint64 `json:"main_spu_id"`
 	// SpuID
-	SpuID uint64 `json:"spu_id,omitempty"`
+	SpuID uint64 `json:"spu_id"`
 	// SpuStatus 状态1：可绑定2：审核中3：审核不通过
-	SpuStatus enum.SpuStatus `json:"spu_status,omitempty"`
+	SpuStatus enum.SpuStatus `json:"spu_status"`
 }

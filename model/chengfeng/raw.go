@@ -13,5 +13,5 @@ type RawReportResponse struct {
 type RawReportList struct {
 	DataList   []map[string]any `json:"data_list,omitempty"`
 	TotalData  map[string]any   `json:"total_data,omitempty"`
-	TotalCount int64            `json:"total_count,omitempty"`
+	TotalCount int64            `json:"total_count"`
 }

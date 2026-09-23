@@ -17,9 +17,9 @@ type Response interface {
 // BaseResponse shared api response data fields
 type BaseResponse struct {
 	// Success 是否成功
-	Success bool `json:"success,omitempty"`
+	Success bool `json:"success"`
 	// Code 返回码
-	Code int `json:"code,omitempty"`
+	Code int `json:"code"`
 	// Message 返回信息（部分老接口用 message 键）
 	Message string `json:"message,omitempty"`
 	// Msg 返回信息——聚光报表/创编等大多数接口实际用的是 **msg** 键。

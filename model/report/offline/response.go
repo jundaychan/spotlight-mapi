@@ -14,7 +14,7 @@ type Response struct {
 // ReportList 离线数据列表
 type ReportList struct {
 	List       []Report `json:"data_list,omitempty"`
-	TotalCount int64    `json:"total_count,omitempty"`
+	TotalCount int64    `json:"total_count"`
 }
 
 // Report 离线数据报表
@@ -27,15 +27,15 @@ type Dimension struct {
 	// Time 时间
 	Time string `json:"time,omitempty"`
 	// CampaignID 计划id
-	CampaignID model.Uint64 `json:"campaign_id,omitempty"`
+	CampaignID model.Uint64 `json:"campaign_id"`
 	// CampaignName 计划名称
 	CampaignName string `json:"campaign_name,omitempty"`
 	// UnitID 单元id
-	UnitID model.Uint64 `json:"unit_id,omitempty"`
+	UnitID model.Uint64 `json:"unit_id"`
 	// UnitName 单元名称
 	UnitName string `json:"unit_name,omitempty"`
 	// CreativityID 创意id
-	CreativityID model.Uint64 `json:"creativity_id,omitempty"`
+	CreativityID model.Uint64 `json:"creativity_id"`
 	// CreativityName 创意名称
 	CreativityName string `json:"creativity_name,omitempty"`
 	// CreativityImage 创意图片
@@ -43,17 +43,17 @@ type Dimension struct {
 	// Keyword 关键词
 	Keyword string `json:"keyword,omitempty"`
 	// Placement 广告类型
-	Placement model.Int `json:"placement,omitempty"`
+	Placement model.Int `json:"placement"`
 	// OptimizeTarget 优化目标
-	OptimizeTarget model.Int `json:"optimize_target,omitempty"`
+	OptimizeTarget model.Int `json:"optimize_target"`
 	// PromotionTarget 推广标的
-	PromotionTarget model.Int `json:"promotion_target,omitempty"`
+	PromotionTarget model.Int `json:"promotion_target"`
 	// BiddingStrategy 出价方式
-	BiddingStrategy model.Int `json:"bidding_strategy,omitempty"`
+	BiddingStrategy model.Int `json:"bidding_strategy"`
 	// BuildType 搭建类型
-	BuildType model.Int `json:"build_type,omitempty"`
+	BuildType model.Int `json:"build_type"`
 	// MarketingTarget 营销诉求
-	MarketingTarget model.Int `json:"marketing_target,omitempty"`
+	MarketingTarget model.Int `json:"marketing_target"`
 	// NoteID 笔记id
 	NoteID string `json:"note_id,omitempty"`
 	// PageID 落地页id
@@ -63,7 +63,7 @@ type Dimension struct {
 	// LiveRedID 直播间id
 	LiveRedID string `json:"live_red_id,omitempty"`
 	// KeywordID 关键词id
-	KeywordID uint64 `json:"keyword_id,omitempty"`
+	KeywordID uint64 `json:"keyword_id"`
 }
 
 // UnmarshalJSON 必须自己实现：本结构体匿名内嵌了 report.DataReportDTO，

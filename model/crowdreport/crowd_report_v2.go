@@ -83,7 +83,7 @@ type CrowdReportV2Response struct {
 // CrowdReportV2Data 人群包报表 V2 数据
 type CrowdReportV2Data struct {
 	// TotalCount 总条数
-	TotalCount int64 `json:"total_count,omitempty"`
+	TotalCount int64 `json:"total_count"`
 	// DataList 明细数据，每行 key 为指标 ename，value 为字符串
 	DataList []map[string]string `json:"data_list,omitempty"`
 	// AggregationData 综合数据，key 为指标 ename，value 为字符串
