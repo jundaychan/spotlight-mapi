@@ -107,6 +107,13 @@ type Request struct {
 	// Filters 通用筛选条件(乘风用)。如按投放方式 deliveryMode(自定义:0/托管:1)筛选：
 	// {Column:"deliveryMode", Operator:"in", Values:[]int{1}}
 	Filters []FilterClause `json:"filters,omitempty"`
+	// Columns 查询指标（camelCase，如 fee / msgLeadsNum）。2026-09-20 起按需查询，
+	// 10-01 之后不传只回基础指标；各报表口可用的列见 report.Columns(gateway)，
+	// 本包 api 函数在它为空时自动补全。
+	Columns []string `json:"columns,omitempty"`
+	// CreationType 创建方式，仅账户层级离线报表：不传只查标准投；全部 = [0,1,2,4]
+	// （实测单独传 [0] / [1] 等会被拒「创建方式参数不正确」）。
+	CreationType []int `json:"creation_type,omitempty"`
 }
 
 // FilterClause 通用筛选子句，对应乘风报表 filters:[{column,operator,values}]。

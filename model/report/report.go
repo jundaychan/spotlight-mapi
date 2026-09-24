@@ -98,8 +98,8 @@ type DataReportDTO struct {
 	PurchaseOrderRoi7d model.Float64 `json:"purchase_order_roi_7d"`
 	// ClkLiveRoomOrderNum 直播间支付订单量; 用户点击推广后的24小时内，在直播间内全部商品的支付总订单量
 	ClkLiveRoomOrderNum model.Int64 `json:"clk_live_room_order_num"`
-	// LiveAverateOrderCost 直播间支付订单成本; 推广消费/直播间支付订单量
-	LiveAverateOrderCost model.Float64 `json:"live_averate_order_cost"`
+	// LiveAverageOrderCost 直播间支付订单成本; 推广消费/直播间支付订单量（旧 tag 拼成 averate，上游键是 average，这列一直是 0）
+	LiveAverageOrderCost model.Float64 `json:"live_average_order_cost"`
 	// ClkLiveRoomRgmv 直播间支付金额; 用户点击推广后的24小时内，在直播间内全部商品的支付总订单金额
 	ClkLiveRoomRgmv model.Float64 `json:"clk_live_room_rgmv"`
 	// ClkLiveRoomRoi 直播间支付ROI; 直播间支付金额/推广消费

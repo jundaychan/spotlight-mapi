@@ -53,6 +53,8 @@ type CampaignRequest struct {
 	Name string `json:"name,omitempty"`
 	// ID 搜索计划id
 	ID uint64 `json:"id,omitempty"`
+	// Columns 查询指标（camelCase），为空时本包 api 函数按 report.Columns(gateway) 补全
+	Columns []string `json:"columns,omitempty"`
 }
 
 // Encode implement PostRequest interface

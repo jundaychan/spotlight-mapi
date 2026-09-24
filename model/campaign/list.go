@@ -21,6 +21,9 @@ type ListRequest struct {
 	// Status 创意状态
 	// 1-有效 2-暂停 3-已删除 4-计划预算不足，5-现金余额不足，7-账户日预算不足 8-处于暂停阶段
 	Status int `json:"status,omitempty"`
+	// CreationType 创建方式过滤：0-标准投 1-简单投全自动 2-留资快投 4-简单投半自动；
+	// 不传默认查全部（2026-08-19 起，此前只回标准投）
+	CreationType []int `json:"creation_type,omitempty"`
 	// Page
 	Page *model.PageDTO `json:"page,omitempty"`
 }

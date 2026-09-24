@@ -33,6 +33,8 @@ type KeywordRequest struct {
 	CampaignName string `json:"campaign_name,omitempty"`
 	// UnitName 搜索单元名称
 	UnitName string `json:"unit_name,omitempty"`
+	// Columns 查询指标（camelCase），为空时本包 api 函数按 report.Columns(gateway) 补全
+	Columns []string `json:"columns,omitempty"`
 }
 
 // Encode implement PostRequest interface

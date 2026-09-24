@@ -4,13 +4,18 @@ import (
 	"context"
 
 	"github.com/jundaychan/spotlight-mapi/core"
+	"github.com/jundaychan/spotlight-mapi/model/report"
 	"github.com/jundaychan/spotlight-mapi/model/report/realtime"
 )
 
 // Unit 单元层级实时数据
 func Unit(ctx context.Context, clt *core.SDKClient, req *realtime.UnitRequest, accessToken string) (*realtime.UnitResponse, error) {
 	resp := new(realtime.UnitResponse)
-	if err := clt.Post(ctx, "/jg/data/report/realtime/unit", req, resp, accessToken); err != nil {
+	r := *req
+	if len(r.Columns) == 0 {
+		r.Columns = report.Columns("/jg/data/report/realtime/unit")
+	}
+	if err := clt.Post(ctx, "/jg/data/report/realtime/unit", &r, resp, accessToken); err != nil {
 		return nil, err
 	}
 	return resp, nil

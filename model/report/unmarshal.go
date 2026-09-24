@@ -14,6 +14,7 @@ import (
 // 且不报错——进线/开口/留资整列静默归零。
 //
 // 键里出现大写字母才走归一路径；纯 snake 报文直接解码，不多花一次 map 往返。
+// 带 data_map 的行（键是 camelCase）必然走归一路径，见下方 data_map 的合并。
 func (d *DataReportDTO) UnmarshalJSON(b []byte) error {
 	type plain DataReportDTO
 	if !bytes.ContainsAny(b, "ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
@@ -31,6 +32,18 @@ func (d *DataReportDTO) UnmarshalJSON(b []byte) error {
 			continue
 		}
 		norm[sk] = v
+	}
+	// data_map：2026-09-20 起离线/实时报表按 columns 回的指标镜像（camelCase 键）。
+	// 平铺字段目前也照样回，这里只补平铺里没有的——上游哪天只回 data_map，指标也不会静默归零。
+	if dm, ok := raw["data_map"]; ok {
+		var m map[string]json.RawMessage
+		if json.Unmarshal(dm, &m) == nil {
+			for k, v := range m {
+				if sk := CamelToSnake(k); norm[sk] == nil {
+					norm[sk] = v
+				}
+			}
+		}
 	}
 	nb, err := json.Marshal(norm)
 	if err != nil {

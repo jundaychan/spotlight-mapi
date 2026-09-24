@@ -14,6 +14,8 @@ type AdvertiserRequest struct {
 	StartDate string `json:"start_date,omitempty"`
 	// EndDate 结束时间，格式 yyyy-MM-dd
 	EndDate string `json:"end_date,omitempty"`
+	// Columns 查询指标（camelCase），为空时本包 api 函数按 report.Columns(gateway) 补全
+	Columns []string `json:"columns,omitempty"`
 }
 
 // Encode implement PostRequest interface

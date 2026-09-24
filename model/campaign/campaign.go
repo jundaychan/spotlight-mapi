@@ -8,6 +8,8 @@ type Campaign struct {
 	CampaignName string `json:"campaign_name,omitempty"`
 	// CampaignFilterState 计划状态	1-有效，2-暂停，3-已删除，4-计划预算不足，5-现金余额不足，6-所有未删除状态，7-账户日预算不足
 	CampaignFilterState int `json:"campaign_filter_state"`
+	// CreationType 创建方式：0-标准投 1-简单投全自动 2-留资快投 4-简单投半自动
+	CreationType int `json:"creation_type"`
 	// CampaignCreateTime 计划创建时间
 	CampaignCreateTime string `json:"campaign_create_time,omitempty"`
 	// CampaignEnable 计划是否可用

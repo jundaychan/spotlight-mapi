@@ -86,3 +86,16 @@ func TestDataReportDTOUnmarshalBothStyles(t *testing.T) {
 		t.Fatalf("嵌套解析失败 err=%v data=%+v", err, wrap.Data)
 	}
 }
+
+// TestDataMapFillsMissingFlatFields 传了 columns 的报表行带 data_map（camelCase）：
+// 平铺里有的以平铺为准，平铺缺的从 data_map 补。
+func TestDataMapFillsMissingFlatFields(t *testing.T) {
+	raw := `{"time":"2026-09-03","fee":"53.26","data_map":{"fee":"99","msgLeadsNum":"3","clkLive5sEntryPv":"7"}}`
+	var d DataReportDTO
+	if err := json.Unmarshal([]byte(raw), &d); err != nil {
+		t.Fatal(err)
+	}
+	if d.Fee != 53.26 || d.MsgLeadsNum != 3 || d.ClkLive5sEntryPv != 7 {
+		t.Errorf("fee=%v msg_leads_num=%v clk_live_5s_entry_pv=%v, want 53.26/3/7", d.Fee, d.MsgLeadsNum, d.ClkLive5sEntryPv)
+	}
+}
