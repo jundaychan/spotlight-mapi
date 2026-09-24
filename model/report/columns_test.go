@@ -32,6 +32,15 @@ func TestColumnsMapBackToDTO(t *testing.T) {
 	if Columns("/jg/data/report/offline/note") != nil {
 		t.Error("非标准报表口应返回 nil")
 	}
+	for c := range splitUnsupported {
+		if !tags[CamelToSnake(c)] {
+			t.Errorf("splitUnsupported 里的 %s 不是 DataReportDTO 的字段", c)
+		}
+	}
+	all, split := Columns("/jg/data/report/offline/account"), SplitColumns("/jg/data/report/offline/account")
+	if len(all)-len(split) != len(splitUnsupported) {
+		t.Errorf("SplitColumns 应恰好去掉 %d 列，实际 %d", len(splitUnsupported), len(all)-len(split))
+	}
 	c := Columns("/jg/data/report/offline/campaign")
 	c[0] = "x"
 	if reportColumns["/jg/data/report/offline/campaign"][0] == "x" {
